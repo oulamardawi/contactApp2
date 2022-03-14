@@ -19,10 +19,15 @@ class customCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-       avatarImg.layer.cornerRadius = (avatarImg.frame.size.width) / 2.2
-       avatarImg.clipsToBounds = true
-       avatarImg.layer.borderWidth = 2.5
-       avatarImg.layer.borderColor = grey.cgColor    }
+        
+        
+//        avatarImg.layer.cornerRadius = (avatarImg.frame.size.width) / 2.2
+//       avatarImg.clipsToBounds = true
+//       avatarImg.layer.borderWidth = 2.5
+//       avatarImg.layer.borderColor = grey.cgColor
+//
+        
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -31,3 +36,20 @@ class customCell: UITableViewCell {
     }
 
 }
+
+extension UIImageView {
+  public func maskCircle(anyImage: UIImage) {
+    self.contentMode = UIView.ContentMode.scaleAspectFill
+    self.layer.cornerRadius = self.frame.height / 2
+    self.layer.masksToBounds = false
+    self.clipsToBounds = true
+    self.layer.borderWidth = 2.5
+   // self.layer.borderColor = grey.cgColor
+   // make square(* must to make circle),
+   // resize(reduce the kilobyte) and
+   // fix rotation.
+    self.image = anyImage
+  }
+}
+
+

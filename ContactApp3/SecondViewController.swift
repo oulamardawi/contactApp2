@@ -21,21 +21,27 @@ class SecondViewcontroller: UIViewController {
     var img = UIImage()
     var userName = ""
     var userNumber = ""
-    
+
     var grey = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        avatarImgSecond.image = img
-        nameLableSecond.text = userName
-        avatarImgSecond.layer.cornerRadius = (avatarImgSecond.frame.size.width) / 2.28;
-        avatarImgSecond.clipsToBounds = true
+        
+        //duplicated
+        avatarImgSecond.contentMode = UIView.ContentMode.scaleAspectFill
         avatarImgSecond.layer.borderWidth = 2.5
         avatarImgSecond.layer.borderColor = grey.cgColor
+        
+        avatarImgSecond.image = img
+        nameLableSecond.text = userName
         nameLable.text = userName
         numberLable.text = userNumber
 
     }
-   
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        avatarImgSecond.layer.cornerRadius = (avatarImgSecond.frame.size.width) / 2;
+        avatarImgSecond.clipsToBounds = true
+    }
 
 }
