@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18642827E33E9B00797D38 /* UIImageView+Border.swift */; };
 		DE3E487327D9E058003F1BD2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E487227D9E058003F1BD2 /* SecondViewController.swift */; };
 		DE42210A27DF7CA200AAD973 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42210927DF7CA200AAD973 /* Person.swift */; };
 		DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C2D27D947D3006BA17D /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE18642827E33E9B00797D38 /* UIImageView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Border.swift"; sourceTree = "<group>"; };
 		DE3E487227D9E058003F1BD2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		DE42210927DF7CA200AAD973 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DEC21C2A27D947D3006BA17D /* ContactApp3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				DEC21C4327D950EC006BA17D /* customCell.swift */,
 				DE3E487227D9E058003F1BD2 /* SecondViewController.swift */,
 				DE42210927DF7CA200AAD973 /* Person.swift */,
+				DE18642827E33E9B00797D38 /* UIImageView+Border.swift */,
 			);
 			path = ContactApp3;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				DEC21C3227D947D3006BA17D /* ViewController.swift in Sources */,
 				DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */,
 				DEC21C4427D950EC006BA17D /* customCell.swift in Sources */,
+				DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */,
 				DE3E487327D9E058003F1BD2 /* SecondViewController.swift in Sources */,
 				DEC21C3027D947D3006BA17D /* SceneDelegate.swift in Sources */,
 			);

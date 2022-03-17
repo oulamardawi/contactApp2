@@ -10,22 +10,31 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var contactTableView: UITableView!
-    // cell is selected(edit)
 
     var contacts = [Person]()
+    let customCell = "customCell"
+    let SecondViewcontroller = "SecondViewcontroller"
+    let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configView()
+        configData()
+    }
+    
+    func configView() {
         contactTableView.delegate = self
         contactTableView.dataSource = self
         contactTableView.separatorStyle = .none
+    }
+    
+    func configData() {
         contacts.append(Person(name: "Joe Belfiore", title: "In a world far away", number: "0599434233", Image: "joe"))
         contacts.append(Person(name: "Bill Gates", title: "What I'm doing here", number: "0599434566", Image: "bill"))
         contacts.append(Person(name: "Mark Zuckerberg", title: "Really busy, WhatsApp only", number: "0599878699", Image: "mark"))
         contacts.append(Person(name: "Masrissa Mayer", title: "In a rush to catch a plane", number: "0599834211", Image: "marissa"))
         contacts.append(Person(name: "Sundar Pichai", title: "Do androids dream of electronic sheep?", number: "0568743329", Image: "sudra"))
         contacts.append(Person(name: "Jeff Bezos", title: "Counting zeros, Prime time", number: "0569809923", Image: "jeff"))
-
     }
 
 }
@@ -41,32 +50,25 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let contactImage = contacts[indexPath.row].Image
-        let myCell = contactTableView.dequeueReusableCell(withIdentifier: "customCell") as! customCell
+        let myCell = contactTableView.dequeueReusableCell(withIdentifier: customCell) as! customCell
         
         myCell.nameLable.text = contacts[indexPath.row].name
         myCell.titleLable.text = contacts[indexPath.row].title
         myCell.avatarImg.image = UIImage(named: contactImage)
-        myCell.avatarImg.maskCircle(anyImage: UIImage(named: contactImage)!)
+        myCell.avatarImg.maskCircle()
+        myCell.avatarImg.addImageBorder(color: imageBorderColor)
 
         return myCell
     }
-    
-
-    //to determine the height of cell
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
-    }
-  
 
     //to handle the interaction with cell
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let contactImage = contacts[indexPath.row].Image
             if let vc = storyboard?.instantiateViewController(withIdentifier: "SecondViewcontroller") as? SecondViewcontroller {
                 vc.userName = contacts[indexPath.row].name
-                vc.img = UIImage(named:contactImage)!
+                vc.img = UIImage(named:contactImage) ?? UIImage()
                 vc.userNumber = contacts[indexPath.row].number
                 self.navigationController?.pushViewController(vc, animated: true)
-  
             }
       }
 

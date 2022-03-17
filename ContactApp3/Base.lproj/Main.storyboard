@@ -27,54 +27,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-AD-QRm">
-                                                    <rect key="frame" x="5" y="5" width="310" height="80"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bill" translatesAutoresizingMaskIntoConstraints="NO" id="tqG-KJ-fak">
-                                                            <rect key="frame" x="8" y="4" width="72" height="72"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="72" id="XZP-PZ-FwQ"/>
-                                                                <constraint firstAttribute="width" constant="72" id="ayW-uJ-Bv1"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bill" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHd-Av-Bd5">
-                                                            <rect key="frame" x="126" y="4" width="176" height="72"/>
-                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krh-ro-VnF">
-                                                            <rect key="frame" x="126" y="44" width="270" height="32"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bill" translatesAutoresizingMaskIntoConstraints="NO" id="tqG-KJ-fak">
+                                                    <rect key="frame" x="30" y="8.5" width="72" height="73"/>
                                                     <constraints>
-                                                        <constraint firstItem="krh-ro-VnF" firstAttribute="leading" secondItem="tqG-KJ-fak" secondAttribute="trailing" constant="46" id="2t7-6f-1Yt"/>
-                                                        <constraint firstItem="rHd-Av-Bd5" firstAttribute="bottom" secondItem="tqG-KJ-fak" secondAttribute="bottom" id="6EW-FX-0bM"/>
-                                                        <constraint firstItem="krh-ro-VnF" firstAttribute="leading" secondItem="rHd-Av-Bd5" secondAttribute="leading" id="7ie-MT-qrD"/>
-                                                        <constraint firstItem="krh-ro-VnF" firstAttribute="bottom" secondItem="RA4-AD-QRm" secondAttribute="bottomMargin" constant="-7" id="BpP-ht-JqT"/>
-                                                        <constraint firstAttribute="trailing" secondItem="rHd-Av-Bd5" secondAttribute="trailing" constant="8" id="CTy-Cb-4gO"/>
-                                                        <constraint firstItem="tqG-KJ-fak" firstAttribute="leading" secondItem="RA4-AD-QRm" secondAttribute="leading" constant="8" id="Cyn-l6-diY"/>
-                                                        <constraint firstItem="rHd-Av-Bd5" firstAttribute="leading" secondItem="tqG-KJ-fak" secondAttribute="trailing" constant="46" id="EBL-Ng-c8f"/>
-                                                        <constraint firstItem="tqG-KJ-fak" firstAttribute="centerY" secondItem="RA4-AD-QRm" secondAttribute="centerY" id="eC6-gm-W9k"/>
-                                                        <constraint firstAttribute="trailing" secondItem="krh-ro-VnF" secondAttribute="trailing" constant="-6" id="eqp-l8-28E"/>
-                                                        <constraint firstItem="rHd-Av-Bd5" firstAttribute="top" secondItem="tqG-KJ-fak" secondAttribute="top" id="x5m-Wd-pXx"/>
+                                                        <constraint firstAttribute="height" constant="72" id="XZP-PZ-FwQ"/>
+                                                        <constraint firstAttribute="width" constant="72" id="ayW-uJ-Bv1"/>
                                                     </constraints>
-                                                </view>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krh-ro-VnF">
+                                                    <rect key="frame" x="110" y="45" width="174" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bill" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHd-Av-Bd5">
+                                                    <rect key="frame" x="110" y="25" width="190" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="RA4-AD-QRm" secondAttribute="trailing" constant="5" id="2JP-bO-3hr"/>
-                                                <constraint firstItem="RA4-AD-QRm" firstAttribute="leading" secondItem="ERe-mG-2WG" secondAttribute="leading" constant="5" id="Iud-ak-2ts"/>
-                                                <constraint firstAttribute="bottom" secondItem="RA4-AD-QRm" secondAttribute="bottom" constant="5" id="ly4-kF-kme"/>
-                                                <constraint firstItem="RA4-AD-QRm" firstAttribute="top" secondItem="ERe-mG-2WG" secondAttribute="top" constant="5" id="wXD-hi-0Cd"/>
+                                                <constraint firstItem="tqG-KJ-fak" firstAttribute="top" secondItem="ERe-mG-2WG" secondAttribute="top" constant="8.5" id="4tR-1N-Jpd"/>
+                                                <constraint firstItem="tqG-KJ-fak" firstAttribute="centerY" secondItem="ERe-mG-2WG" secondAttribute="centerY" id="6W5-51-ZEO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="krh-ro-VnF" secondAttribute="trailing" constant="20" id="96b-zF-avs"/>
+                                                <constraint firstItem="krh-ro-VnF" firstAttribute="top" secondItem="tqG-KJ-fak" secondAttribute="centerY" id="AmI-mQ-UKv"/>
+                                                <constraint firstItem="krh-ro-VnF" firstAttribute="leading" secondItem="rHd-Av-Bd5" secondAttribute="leading" id="IZI-zj-qsQ"/>
+                                                <constraint firstItem="tqG-KJ-fak" firstAttribute="leading" secondItem="ERe-mG-2WG" secondAttribute="leading" constant="30" id="NNZ-bu-LFc"/>
+                                                <constraint firstItem="rHd-Av-Bd5" firstAttribute="bottom" secondItem="tqG-KJ-fak" secondAttribute="centerY" id="P8D-X7-V4h"/>
+                                                <constraint firstAttribute="trailing" secondItem="rHd-Av-Bd5" secondAttribute="trailing" constant="20" id="Zfr-P5-JWK"/>
+                                                <constraint firstItem="rHd-Av-Bd5" firstAttribute="leading" secondItem="tqG-KJ-fak" secondAttribute="trailing" constant="8" symbolic="YES" id="wde-39-fdP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="avatarImg" destination="tqG-KJ-fak" id="XYi-04-FSG"/>
-                                            <outlet property="contactView" destination="RA4-AD-QRm" id="wfo-9a-RDn"/>
                                             <outlet property="nameLable" destination="rHd-Av-Bd5" id="2yd-pw-7Fy"/>
                                             <outlet property="titleLable" destination="krh-ro-VnF" id="aPa-ho-KWJ"/>
                                         </connections>
@@ -98,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836.2318840579712" y="83.967391304347828"/>
+            <point key="canvasLocation" x="1835.625" y="83.75"/>
         </scene>
         <!--Second Viewcontroller-->
         <scene sceneID="hIG-CK-fWB">
@@ -188,7 +174,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ruX-Ve-xmc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VGm-4j-QAX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
