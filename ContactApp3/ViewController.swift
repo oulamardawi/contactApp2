@@ -64,7 +64,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     //to handle the interaction with cell
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let contactImage = contacts[indexPath.row].Image
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "SecondViewcontroller") as? SecondViewcontroller {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "SecondViewcontroller") as? SecondViewController {
                 vc.userName = contacts[indexPath.row].name
                 vc.img = UIImage(named:contactImage) ?? UIImage()
                 vc.userNumber = contacts[indexPath.row].number
