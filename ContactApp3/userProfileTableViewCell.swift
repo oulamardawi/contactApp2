@@ -13,6 +13,7 @@ class UserProfileTableViewCell: UITableViewCell {
 
     @IBOutlet var avatarProfileImage: UIImageView!
     @IBOutlet var nameProfileLable: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -20,8 +21,5 @@ class UserProfileTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
-
-
 }
 

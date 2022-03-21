@@ -12,7 +12,7 @@ class SecondViewController: UIViewController {
     
 
     @IBOutlet var UserProfileInfoTableView: UITableView!
-    let customUserProfileCell = "customUserProfileoCell"
+    let customUserProfileCell = "customUserProfileCell"
     let customUserInfoCell = "customUserInfoCell"
     
     var img = UIImage()
@@ -38,11 +38,18 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
+    
+    //height
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     return 200
+    }
+    
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
+       
+        if indexPath.row == 0 {
         if let userProfileTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserProfileCell) as? UserProfileTableViewCell{
-            if indexPath.row == 1 {
+          
                 userProfileTableCell.avatarProfileImage.maskCircle()
                 userProfileTableCell.avatarProfileImage.addImageBorder(color: imageBorderColor)
                 userProfileTableCell.avatarProfileImage.image = img
@@ -51,8 +58,8 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        else if indexPath.row == 1 {
         if let userInfoTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfoTableViewCell{
-          if indexPath.row == 0 {
               userInfoTableCell.nameInfoLable.text = userName
               userInfoTableCell.numberInfoLable.text = userNumber
               return userInfoTableCell
