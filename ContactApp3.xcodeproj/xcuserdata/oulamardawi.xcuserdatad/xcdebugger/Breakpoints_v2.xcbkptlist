@@ -3,4 +3,114 @@
    uuid = "15855667-5ED4-4150-8055-AFE9D73D63B4"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2570FFAF-4889-45B8-A617-28655D8730BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ContactApp3/UserInfo2TableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "UserInfo2TableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2570FFAF-4889-45B8-A617-28655D8730BC - dbc7db889a449448"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactApp3.UserInfo2TableViewCell.UserInfoTextField.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ContactApp3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oulamardawi/Desktop/contactApp2/ContactApp3/UserInfo2TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "2570FFAF-4889-45B8-A617-28655D8730BC - 34927ec28182c044"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactApp3.UserInfo2TableViewCell.UserInfoTextField.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ContactApp3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oulamardawi/Desktop/contactApp2/ContactApp3/UserInfo2TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "2570FFAF-4889-45B8-A617-28655D8730BC - 279aba673900501"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactApp3.UserInfo2TableViewCell.UserInfoTextField.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ContactApp3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oulamardawi/Desktop/contactApp2/ContactApp3/UserInfo2TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "2570FFAF-4889-45B8-A617-28655D8730BC - 95862594939a7503"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactApp3.UserInfo2TableViewCell.UserInfoTextField.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ContactApp3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oulamardawi/Desktop/contactApp2/ContactApp3/UserInfo2TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "2570FFAF-4889-45B8-A617-28655D8730BC - 6ebdf24f0689125f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactApp3.UserInfo2TableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; ContactApp3.UserInfo2TableViewCell"
+                  moduleName = "ContactApp3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oulamardawi/Desktop/contactApp2/ContactApp3/UserInfo2TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "2570FFAF-4889-45B8-A617-28655D8730BC - ab47a06a75418b40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactApp3.UserInfo2TableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ContactApp3.UserInfo2TableViewCell&gt;"
+                  moduleName = "ContactApp3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oulamardawi/Desktop/contactApp2/ContactApp3/UserInfo2TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

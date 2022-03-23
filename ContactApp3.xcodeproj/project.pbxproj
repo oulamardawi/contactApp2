@@ -12,6 +12,10 @@
 		DE18642D27E36EF600797D38 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */; };
 		DE3E487327D9E058003F1BD2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E487227D9E058003F1BD2 /* SecondViewController.swift */; };
 		DE42210A27DF7CA200AAD973 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42210927DF7CA200AAD973 /* Person.swift */; };
+		DE52076627E9EC180001E216 /* floatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52076527E9EC180001E216 /* floatingButton.swift */; };
+		DE65177C27E9CC88004132C7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177B27E9CC88004132C7 /* RegisterViewController.swift */; };
+		DE65177E27E9DB15004132C7 /* UserInfo2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */; };
+		DE65178027E9DB2E004132C7 /* UserImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */; };
 		DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C2D27D947D3006BA17D /* AppDelegate.swift */; };
 		DEC21C3027D947D3006BA17D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C2F27D947D3006BA17D /* SceneDelegate.swift */; };
 		DEC21C3227D947D3006BA17D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C3127D947D3006BA17D /* ViewController.swift */; };
@@ -27,6 +31,10 @@
 		DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		DE3E487227D9E058003F1BD2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		DE42210927DF7CA200AAD973 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DE52076527E9EC180001E216 /* floatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floatingButton.swift; sourceTree = "<group>"; };
+		DE65177B27E9CC88004132C7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo2TableViewCell.swift; sourceTree = "<group>"; };
+		DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageTableViewCell.swift; sourceTree = "<group>"; };
 		DEC21C2A27D947D3006BA17D /* ContactApp3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC21C2D27D947D3006BA17D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC21C2F27D947D3006BA17D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +89,10 @@
 				DE18642827E33E9B00797D38 /* UIImageView+Border.swift */,
 				DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */,
 				DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */,
+				DE65177B27E9CC88004132C7 /* RegisterViewController.swift */,
+				DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */,
+				DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */,
+				DE52076527E9EC180001E216 /* floatingButton.swift */,
 			);
 			path = ContactApp3;
 			sourceTree = "<group>";
@@ -157,12 +169,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE42210A27DF7CA200AAD973 /* Person.swift in Sources */,
+				DE65177C27E9CC88004132C7 /* RegisterViewController.swift in Sources */,
 				DEC21C3227D947D3006BA17D /* ViewController.swift in Sources */,
+				DE52076627E9EC180001E216 /* floatingButton.swift in Sources */,
 				DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */,
+				DE65178027E9DB2E004132C7 /* UserImageTableViewCell.swift in Sources */,
 				DEC21C4427D950EC006BA17D /* customCell.swift in Sources */,
 				DE18642B27E36EE100797D38 /* UserProfileTableViewCell.swift in Sources */,
 				DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */,
 				DE3E487327D9E058003F1BD2 /* SecondViewController.swift in Sources */,
+				DE65177E27E9DB15004132C7 /* UserInfo2TableViewCell.swift in Sources */,
 				DEC21C3027D947D3006BA17D /* SceneDelegate.swift in Sources */,
 				DE18642D27E36EF600797D38 /* UserInfoTableViewCell.swift in Sources */,
 			);
