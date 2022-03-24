@@ -18,7 +18,19 @@ class ViewController: UIViewController {
     let RegisterViewcontroller = "RegisterViewcontroller"
     let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
     
-  
+    let floatingButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y:0, width:60, height: 60))
+        button.backgroundColor = .systemBlue
+        let image = UIImage(systemName:"plus",
+                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium))
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.setTitleColor(.white, for: .normal)
+        button.layer.shadowRadius = 10
+        button.layer.shadowOpacity = 0.4
+        button.layer.cornerRadius = 30
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +63,12 @@ class ViewController: UIViewController {
     }
     
     func configData() {
-        contacts.append(Person(name: "Joe Belfiore", title: "In a world far away", number: "0599434233", Image: "joe"))
-        contacts.append(Person(name: "Bill Gates", title: "What I'm doing here", number: "0599434566", Image: "bill"))
-        contacts.append(Person(name: "Mark Zuckerberg", title: "Really busy, WhatsApp only", number: "0599878699", Image: "mark"))
-        contacts.append(Person(name: "Masrissa Mayer", title: "In a rush to catch a plane", number: "0599834211", Image: "marissa"))
-        contacts.append(Person(name: "Sundar Pichai", title: "Do androids dream of electronic sheep?", number: "0568743329", Image: "sudra"))
-        contacts.append(Person(name: "Jeff Bezos", title: "Counting zeros, Prime time", number: "0569809923", Image: "jeff"))
+        contacts.append(Person(name: "Joe Belfiore", title: "In a world far away", number: "0599434233", Image: UIImage(named: "joe") ?? UIImage()))
+        contacts.append(Person(name: "Bill Gates", title: "What I'm doing here", number: "0599434566", Image: UIImage(named: "bill") ?? UIImage()))
+        contacts.append(Person(name: "Mark Zuckerberg", title: "Really busy, WhatsApp only", number: "0599878699", Image: UIImage(named: "mark") ?? UIImage()))
+        contacts.append(Person(name: "Masrissa Mayer", title: "In a rush to catch a plane", number: "0599834211", Image: UIImage(named: "marissa") ?? UIImage()))
+        contacts.append(Person(name: "Sundar Pichai", title: "Do androids dream of electronic sheep?", number: "0568743329", Image: UIImage(named: "sudra") ?? UIImage()))
+        contacts.append(Person(name: "Jeff Bezos", title: "Counting zeros, Prime time", number: "0569809923", Image: UIImage(named: "jeff") ?? UIImage()))
     }
     
 }
@@ -75,7 +87,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         myCell.nameLable.text = contacts[indexPath.row].name
         myCell.titleLable.text = contacts[indexPath.row].title
-        myCell.avatarImg.image = UIImage(named: contactImage)
+        myCell.avatarImg.image = contactImage
         myCell.avatarImg.maskCircle()
         myCell.avatarImg.addImageBorder(color: imageBorderColor)
         
@@ -88,7 +100,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let contactImage = contacts[indexPath.row].Image
         if let vc = storyboard?.instantiateViewController(withIdentifier: SecondViewcontroller) as? SecondViewController {
             vc.userName = contacts[indexPath.row].name
-            vc.img = UIImage(named:contactImage) ?? UIImage()
+            vc.img = contactImage 
             vc.userNumber = contacts[indexPath.row].number
             self.navigationController?.pushViewController(vc, animated: true)
         }
