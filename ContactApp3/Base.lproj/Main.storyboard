@@ -68,19 +68,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuD-7v-mP8">
+                                <rect key="frame" x="236" y="419" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="JVs-6Y-8cq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="N7H-f0-bgF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="didTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVP-zy-8Ft"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cYM-4C-jxT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1is-pM-neR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DuD-7v-mP8" secondAttribute="bottom" constant="1" id="8bv-tE-ijb"/>
                             <constraint firstAttribute="bottom" secondItem="cYM-4C-jxT" secondAttribute="bottom" id="92m-Ec-2so"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cYM-4C-jxT" secondAttribute="trailing" id="QnM-BD-bfq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DuD-7v-mP8" secondAttribute="trailing" constant="24" id="XHn-8U-Z8l"/>
                             <constraint firstItem="cYM-4C-jxT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q5X-4o-x3Y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TWG-rj-8L6"/>
                     <connections>
                         <outlet property="contactTableView" destination="cYM-4C-jxT" id="L1M-Y9-3iD"/>
+                        <outlet property="floatingButton" destination="DuD-7v-mP8" id="hI4-am-vNS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -215,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="2558" y="84"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Add Contact View Controller-->
         <scene sceneID="OPh-z5-9TO">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewcontroller" id="atQ-Iu-qNP" customClass="RegisterViewController" customModule="ContactApp3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewcontroller" id="atQ-Iu-qNP" customClass="AddContactViewController" customModule="ContactApp3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qZI-76-9au">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,6 +321,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Li-pj-L5n">
+                                <rect key="frame" x="121.5" y="426" width="77" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aGL-ec-mHz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -313,11 +335,14 @@
                             <constraint firstItem="rQQ-kb-jXY" firstAttribute="top" secondItem="aGL-ec-mHz" secondAttribute="top" id="7Jc-vU-dxQ"/>
                             <constraint firstItem="aGL-ec-mHz" firstAttribute="trailing" secondItem="rQQ-kb-jXY" secondAttribute="trailing" id="dlo-fS-P4E"/>
                             <constraint firstItem="rQQ-kb-jXY" firstAttribute="leading" secondItem="aGL-ec-mHz" secondAttribute="leading" id="hNY-vJ-rji"/>
+                            <constraint firstItem="9Li-pj-L5n" firstAttribute="centerX" secondItem="aGL-ec-mHz" secondAttribute="centerX" id="nh4-hm-W5h"/>
+                            <constraint firstItem="aGL-ec-mHz" firstAttribute="bottom" secondItem="9Li-pj-L5n" secondAttribute="bottom" constant="10" id="sc0-pe-BLv"/>
                             <constraint firstItem="aGL-ec-mHz" firstAttribute="bottom" secondItem="rQQ-kb-jXY" secondAttribute="bottom" id="xFc-bF-ajB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="UserInfoImageTableView" destination="rQQ-kb-jXY" id="UiN-wR-WHw"/>
+                        <outlet property="floatingButton" destination="9Li-pj-L5n" id="BkG-Nf-cyC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMw-kW-FK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -327,7 +352,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1836" y="849"/>
+            <point key="canvasLocation" x="1835.625" y="848.75"/>
         </scene>
         <!--Trial Table View Controller-->
         <scene sceneID="OxB-NC-nne">

@@ -8,58 +8,60 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AddContactDelegate {
+    
+    func handleButton(contact: Person) {
+        contacts.append(contact)
+        contactTableView.reloadData()
+    }
     
     @IBOutlet var contactTableView: UITableView!
     
+    @IBOutlet var floatingButton: UIButton!
     var contacts = [Person]()
     let customCell = "customCell"
     let SecondViewcontroller = "SecondViewcontroller"
     let RegisterViewcontroller = "RegisterViewcontroller"
     let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
     
-    let floatingButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y:0, width:60, height: 60))
-        button.backgroundColor = .systemBlue
-        let image = UIImage(systemName:"plus",
-                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium))
-        button.setImage(image, for: .normal)
-        button.tintColor = .white
-        button.setTitleColor(.white, for: .normal)
-        button.layer.shadowRadius = 10
-        button.layer.shadowOpacity = 0.4
-        button.layer.cornerRadius = 30
-        return button
-    }()
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(floatingButton)
-        floatingButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        floatingButton.addTarget(self, action: #selector(didTab), for: .touchUpInside)
         configView()
         configData()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        floatingButton.frame = CGRect(
-            x: view.frame.size.width - 70,
-            y: view.frame.size.height - 100,
-            width: 60,
-            height: 60)
+
     }
-    
-    @objc private func didTapButton() {
-        if let vcc = storyboard?.instantiateViewController(withIdentifier: RegisterViewcontroller) as? RegisterViewController {
+    @IBAction func didTab(_ sender: Any) {
+        if let vcc = storyboard?.instantiateViewController(withIdentifier: RegisterViewcontroller) as? AddContactViewController {
+            vcc.delegate = self //self: a
             self.navigationController?.pushViewController(vcc, animated: true)
                 }
     }
     
+
+     
     
     func configView() {
         contactTableView.delegate = self
         contactTableView.dataSource = self
         contactTableView.separatorStyle = .none
+       
+        floatingButton.backgroundColor = .systemBlue
+        let image = UIImage(systemName:"plus",
+                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium))
+        floatingButton.setImage(image, for: .normal)
+        floatingButton.tintColor = .white
+        floatingButton.setTitleColor(.white, for: .normal)
+        floatingButton.layer.shadowRadius = 20
+        floatingButton.layer.shadowOpacity = 0.4
+        floatingButton.layer.cornerRadius = 30
     }
     
     func configData() {
