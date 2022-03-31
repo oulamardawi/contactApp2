@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="90" id="b11-tn-Xey" customClass="customCell" customModule="ContactApp3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="90" id="b11-tn-Xey" customClass="ContactTableViewCell" customModule="ContactApp3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b11-tn-Xey" id="ERe-mG-2WG">
@@ -70,10 +70,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuD-7v-mP8">
-                                <rect key="frame" x="236" y="419" width="60" height="60"/>
+                                <rect key="frame" x="236" y="420" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="JVs-6Y-8cq"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="N7H-f0-bgF"/>
+                                    <constraint firstAttribute="width" constant="60" id="N7H-f0-bgF"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=""/>
@@ -86,9 +86,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cYM-4C-jxT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1is-pM-neR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DuD-7v-mP8" secondAttribute="bottom" constant="1" id="8bv-tE-ijb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DuD-7v-mP8" secondAttribute="bottom" id="8bv-tE-ijb"/>
                             <constraint firstAttribute="bottom" secondItem="cYM-4C-jxT" secondAttribute="bottom" id="92m-Ec-2so"/>
-                            <constraint firstItem="DuD-7v-mP8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="BAI-im-1Ip"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cYM-4C-jxT" secondAttribute="trailing" id="QnM-BD-bfq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DuD-7v-mP8" secondAttribute="trailing" constant="24" id="XHn-8U-Z8l"/>
                             <constraint firstItem="cYM-4C-jxT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q5X-4o-x3Y"/>
@@ -98,6 +97,7 @@
                     <connections>
                         <outlet property="contactTableView" destination="cYM-4C-jxT" id="L1M-Y9-3iD"/>
                         <outlet property="floatingButton" destination="DuD-7v-mP8" id="hI4-am-vNS"/>
+                        <segue destination="5mx-ea-iC9" kind="show" identifier="showContactDetails" id="hFV-SV-Z6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k6n-vP-fep">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="customUserProfileCell" rowHeight="200" id="prX-xX-gmS" customClass="UserProfileTableViewCell" customModule="ContactApp3" customModuleProvider="target">
@@ -224,6 +224,7 @@
                             <constraint firstItem="qkW-mU-tzA" firstAttribute="trailing" secondItem="k6n-vP-fep" secondAttribute="trailing" id="iPL-Cr-gVv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2g9-YF-SsM"/>
                     <connections>
                         <outlet property="UserProfileInfoTableView" destination="k6n-vP-fep" id="1XJ-MJ-j7E"/>
                     </connections>
@@ -329,6 +330,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapButton" destination="atQ-Iu-qNP" eventType="touchUpInside" id="7Za-pB-lel"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aGL-ec-mHz"/>
@@ -415,7 +419,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ruX-Ve-xmc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VGm-4j-QAX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -17,19 +17,17 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     var delegate: AddContactDelegate? //to bind a and b viewcontroller
     
     @IBOutlet var floatingButton: UIButton!
-    
-    let Viewcontroller = "Viewcontroller"
-    
     @IBOutlet var UserInfoImageTableView: UITableView!
+    
     let customUserInfoCell = "customUserInfo2Cell"
     let customUserImageCell = "customUserImageCell"
     var imagePicker = UIImagePickerController()
     
-    public enum LabelType: Int {
-        case Name = 0
+    public enum LabelType: Int, CaseIterable {
+        case Name = 3
         case Number = 1
         case Status = 2
-        case Image = 3
+        case Image = 0
         
         var title: String {
             switch self {
@@ -48,8 +46,6 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(floatingButton)
-        floatingButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         configView()
         imagePicker.delegate = self
     }
@@ -64,7 +60,7 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @objc private func didTapButton() {
+     @IBAction func didTapButton() {
         let person = Person()
         let indexPath0 = IndexPath(row: LabelType.Name.rawValue, section: 0)
         if let userInfoTableCell = UserInfoImageTableView.cellForRow(at: indexPath0) as? UserInfo2TableViewCell, let personName = userInfoTableCell.UserInfoTextField.text {
@@ -105,40 +101,36 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
     
     //determine number of rows to show in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return LabelType.allCases.count
     }
     
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let numberRaw = indexPath.row
-        let infoLable = LabelType(rawValue: numberRaw)?.title
-        
-        if numberRaw == LabelType.Name.rawValue || numberRaw == LabelType.Number.rawValue || numberRaw == LabelType.Status.rawValue {
+        let rowType = LabelType(rawValue: indexPath.row)
+        switch rowType {
+        case .Name, .Number, .Status:
             if let userInfo2TableCell = UserInfoImageTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfo2TableViewCell{
-                userInfo2TableCell.UserInfoLable.text = infoLable
+                userInfo2TableCell.UserInfoLable.text = rowType?.title
                 return userInfo2TableCell
             }
-        }
-        
-        else if numberRaw == LabelType.Image.rawValue {
+        case .Image:
             if let userImageTableCell = UserInfoImageTableView.dequeueReusableCell(withIdentifier: customUserImageCell) as? UserImageTableViewCell{
                 //   userImageTableCell.UserImageView.maskCircle()
                 return userImageTableCell
             }
+        default:
+            break
         }
+        
         return UITableViewCell()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let indexPath = IndexPath(row: 3, section: 0)
+        let indexPath = IndexPath(row: LabelType.Image.rawValue, section: 0)
         if let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage, let userImageTableCell = UserInfoImageTableView.cellForRow(at: indexPath) as? UserImageTableViewCell {
             userImageTableCell.UserImageView.image = selectedImage
         }
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }
-

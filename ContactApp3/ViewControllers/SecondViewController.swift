@@ -10,14 +10,12 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    @IBOutlet weak var UserProfileInfoTableView: UITableView!
     
-    @IBOutlet var UserProfileInfoTableView: UITableView!
     let customUserProfileCell = "customUserProfileCell"
     let customUserInfoCell = "customUserInfoCell"
+    var contact: Person?
     
-    var img = UIImage()
-    var userName = ""
-    var userNumber = ""
     let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
     
     override func viewDidLoad() {
@@ -51,9 +49,8 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
             if let userProfileTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserProfileCell) as? UserProfileTableViewCell{
                 userProfileTableCell.avatarProfileImage.maskCircle()
                 userProfileTableCell.avatarProfileImage.addImageBorder(color: imageBorderColor)
-                userProfileTableCell.avatarProfileImage.image = img
-                userProfileTableCell.nameProfileLable.text = userName
-                userProfileTableCell.nameProfileLable.text = userName
+                userProfileTableCell.avatarProfileImage.image = contact?.Image
+                userProfileTableCell.nameProfileLable.text = contact?.name
 
                 return userProfileTableCell
             }
@@ -61,8 +58,8 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
         
         else if indexPath.row == 1 {
             if let userInfoTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfoTableViewCell{
-                userInfoTableCell.nameInfoLable.text = userName
-                userInfoTableCell.numberInfoLable.text = userNumber
+                userInfoTableCell.nameInfoLable.text = contact?.name
+                userInfoTableCell.numberInfoLable.text = contact?.number
                 return userInfoTableCell
             }
         }

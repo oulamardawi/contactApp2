@@ -23,7 +23,7 @@
 		DEC21C3527D947D3006BA17D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC21C3327D947D3006BA17D /* Main.storyboard */; };
 		DEC21C3727D947D4006BA17D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC21C3627D947D4006BA17D /* Assets.xcassets */; };
 		DEC21C3A27D947D4006BA17D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC21C3827D947D4006BA17D /* LaunchScreen.storyboard */; };
-		DEC21C4427D950EC006BA17D /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C4327D950EC006BA17D /* customCell.swift */; };
+		DEC21C4427D950EC006BA17D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C4327D950EC006BA17D /* ContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		DEC21C3627D947D4006BA17D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC21C3927D947D4006BA17D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC21C3B27D947D4006BA17D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEC21C4327D950EC006BA17D /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		DEC21C4327D950EC006BA17D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +59,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02F9C42927F5A35300FE451D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DEC21C3127D947D3006BA17D /* ContactsListViewController.swift */,
+				DE3E487227D9E058003F1BD2 /* SecondViewController.swift */,
+				DE65177B27E9CC88004132C7 /* AddContactViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		02F9C42A27F5A36C00FE451D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEC21C4327D950EC006BA17D /* ContactTableViewCell.swift */,
+				DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */,
+				DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */,
+				DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */,
+				DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		02F9C42B27F5A38D00FE451D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE18642827E33E9B00797D38 /* UIImageView+Border.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		02F9C42C27F5A39800FE451D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE42210927DF7CA200AAD973 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		02F9C42D27F5A3A500FE451D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DEC21C2127D947D3006BA17D = {
 			isa = PBXGroup;
 			children = (
@@ -78,24 +123,19 @@
 		DEC21C2C27D947D3006BA17D /* ContactApp3 */ = {
 			isa = PBXGroup;
 			children = (
+				02F9C42D27F5A3A500FE451D /* ViewModels */,
+				02F9C42C27F5A39800FE451D /* Models */,
+				02F9C42B27F5A38D00FE451D /* Extensions */,
+				02F9C42A27F5A36C00FE451D /* Cells */,
+				02F9C42927F5A35300FE451D /* ViewControllers */,
 				DE3ECA0027EC74380085B277 /* trialTableViewController.swift */,
 				DE3ECA0327EC745E0085B277 /* trialTVCC.swift */,
 				DEC21C2D27D947D3006BA17D /* AppDelegate.swift */,
 				DEC21C2F27D947D3006BA17D /* SceneDelegate.swift */,
-				DEC21C3127D947D3006BA17D /* ContactsListViewController.swift */,
 				DEC21C3327D947D3006BA17D /* Main.storyboard */,
 				DEC21C3627D947D4006BA17D /* Assets.xcassets */,
 				DEC21C3827D947D4006BA17D /* LaunchScreen.storyboard */,
 				DEC21C3B27D947D4006BA17D /* Info.plist */,
-				DEC21C4327D950EC006BA17D /* customCell.swift */,
-				DE3E487227D9E058003F1BD2 /* SecondViewController.swift */,
-				DE42210927DF7CA200AAD973 /* Person.swift */,
-				DE18642827E33E9B00797D38 /* UIImageView+Border.swift */,
-				DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */,
-				DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */,
-				DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */,
-				DE65177B27E9CC88004132C7 /* AddContactViewController.swift */,
-				DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */,
 			);
 			path = ContactApp3;
 			sourceTree = "<group>";
@@ -176,7 +216,7 @@
 				DEC21C3227D947D3006BA17D /* ContactsListViewController.swift in Sources */,
 				DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */,
 				DE65178027E9DB2E004132C7 /* UserImageTableViewCell.swift in Sources */,
-				DEC21C4427D950EC006BA17D /* customCell.swift in Sources */,
+				DEC21C4427D950EC006BA17D /* ContactTableViewCell.swift in Sources */,
 				DE18642B27E36EE100797D38 /* UserProfileTableViewCell.swift in Sources */,
 				DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */,
 				DE3E487327D9E058003F1BD2 /* SecondViewController.swift in Sources */,
