@@ -1,0 +1,5 @@
+only_rules:
+- class_delegate_protocol
+- opening_brace
+- closing_brace
+- colon
