@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, AddContactDelegate {
+class ContactsListViewController: UIViewController, AddContactDelegate {
     
     func handleButton(contact: Person) {
         contacts.append(contact)
@@ -75,7 +75,7 @@ class ViewController: UIViewController, AddContactDelegate {
     
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     //determine number of rows to show in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
