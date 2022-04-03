@@ -15,8 +15,8 @@ protocol AddContactDelegate: AnyObject {
 class AddContactViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     weak var delegate: AddContactDelegate? //to bind a and b viewcontroller
     
-    @IBOutlet var floatingButton: UIButton!
-    @IBOutlet var UserInfoImageTableView: UITableView!
+    @IBOutlet weak var floatingButton: UIButton!
+    @IBOutlet weak var userInfoImageTableView: UITableView!
     
     let customUserInfoCell = "customUserInfo2Cell"
     let customUserImageCell = "customUserImageCell"
@@ -58,20 +58,20 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction private func didTapSaveButton() {
         let person = Person()
         let nameIndexPath = IndexPath(row: LabelType.Name.rawValue, section: 0)
-        if let userInfoTableCell = UserInfoImageTableView.cellForRow(at: nameIndexPath) as? UserInfo2TableViewCell, let personName = userInfoTableCell.UserInfoTextField.text {
+        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: nameIndexPath) as? UserInfo2TableViewCell, let personName = userInfoTableCell.UserInfoTextField.text {
             person.name = personName
         }
         let numberIndexPath = IndexPath(row: LabelType.Number.rawValue, section: 0)
-        if let userInfoTableCell = UserInfoImageTableView.cellForRow(at: numberIndexPath) as? UserInfo2TableViewCell, let y = userInfoTableCell.UserInfoTextField.text {
+        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: numberIndexPath) as? UserInfo2TableViewCell, let y = userInfoTableCell.UserInfoTextField.text {
             person.number = y
         }
         let statusIndexPath = IndexPath(row: LabelType.Status.rawValue, section: 0)
-        if let userInfoTableCell = UserInfoImageTableView.cellForRow(at: statusIndexPath) as? UserInfo2TableViewCell, let z = userInfoTableCell.UserInfoTextField.text {
+        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: statusIndexPath) as? UserInfo2TableViewCell, let z = userInfoTableCell.UserInfoTextField.text {
             person.title = z
         }
         
         let imageIndexPath = IndexPath(row: LabelType.Image.rawValue, section: 0)
-        if let userImageTableCell = UserInfoImageTableView.cellForRow(at: imageIndexPath) as? UserImageTableViewCell, let img = userImageTableCell.UserImageView.image {
+        if let userImageTableCell = userInfoImageTableView.cellForRow(at: imageIndexPath) as? UserImageTableViewCell, let img = userImageTableCell.UserImageView.image {
             person.Image = img
         }
         delegate?.handleButton(contact: person)  //unwrapping
@@ -79,9 +79,9 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func configView() {
-        UserInfoImageTableView.delegate = self
-        UserInfoImageTableView.dataSource = self
-        UserInfoImageTableView.separatorStyle = .none
+        userInfoImageTableView.delegate = self
+        userInfoImageTableView.dataSource = self
+        userInfoImageTableView.separatorStyle = .none
         floatingButton.backgroundColor = .systemBlue
         floatingButton.tintColor = .white
         floatingButton.setTitleColor(.white, for: .normal)
@@ -106,12 +106,12 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
         switch rowType {
             
         case .Name, .Number, .Status:
-            if let userInfo2TableCell = UserInfoImageTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfo2TableViewCell {
+            if let userInfo2TableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfo2TableViewCell {
                 userInfo2TableCell.UserInfoLable.text = rowType?.title
                 return userInfo2TableCell
             }
         case .Image:
-            if let userImageTableCell = UserInfoImageTableView.dequeueReusableCell(withIdentifier: customUserImageCell) as? UserImageTableViewCell {
+            if let userImageTableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserImageCell) as? UserImageTableViewCell {
                 return userImageTableCell
             }
         default:
@@ -123,7 +123,7 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let indexPath = IndexPath(row: LabelType.Image.rawValue, section: 0)
-        if let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage, let userImageTableCell = UserInfoImageTableView.cellForRow(at: indexPath) as? UserImageTableViewCell {
+        if let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage, let userImageTableCell = userInfoImageTableView.cellForRow(at: indexPath) as? UserImageTableViewCell {
             userImageTableCell.UserImageView.image = selectedImage
         }
         dismiss(animated: true, completion: nil)

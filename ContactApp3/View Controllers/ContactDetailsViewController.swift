@@ -18,6 +18,21 @@ class ContactDetailsViewController: UIViewController {
     
     var contact: Person?
     
+    public enum CellType: Int, CaseIterable {
+        case Profile = 0
+        case Information = 1
+        
+        var title: String {
+            switch self {
+            case .Profile:
+                return "Name"
+            case .Information:
+                return "Number"
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
@@ -34,18 +49,20 @@ extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSour
     
     //determine number of rows to show in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return CellType.allCases.count
     }
-    
     //height
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         return 200
+     }
     
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let rowType = CellType(rawValue: indexPath.row)
         
-        if indexPath.row == 0 {
+        switch rowType {
+            
+        case .Profile:
             if let userProfileTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserProfileCell) as? UserProfileTableViewCell {
                 userProfileTableCell.avatarProfileImage.maskCircle()
                 userProfileTableCell.avatarProfileImage.addImageBorder(color: imageBorderColor)
@@ -54,18 +71,19 @@ extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSour
                 
                 return userProfileTableCell
             }
-        }
-        
-        else if indexPath.row == 1 {
+        case .Information:
             if let userInfoTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfoTableViewCell {
                 userInfoTableCell.nameInfoLable.text = contact?.name
                 userInfoTableCell.numberInfoLable.text = contact?.number
                 return userInfoTableCell
             }
+            
+        default:
+            break
         }
+        
         return UITableViewCell()
     }
-    
 }
 
 
