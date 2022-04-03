@@ -8,23 +8,16 @@
 import UIKit
 
 
-class ContactsListViewController: UIViewController, AddContactDelegate {
-    
-    func handleButton(contact: Person) {
-        contacts.append(contact)
-        contactTableView.reloadData()
-    }
+class ContactsListViewController: UIViewController {
     
     @IBOutlet var contactTableView: UITableView!
-    
     @IBOutlet var floatingButton: UIButton!
-    var contacts = [Person]()
-    let customCell = "customCell"
-    let SecondViewcontroller = "SecondViewcontroller"
-    let RegisterViewcontroller = "RegisterViewcontroller"
-    let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
     
- 
+    var contacts = [Person]()
+    let ContactCell = "ContactCell"
+    let ContactDetailsViewcontroller = "ContactDetailsViewcontroller"
+    let AddContactViewController = "AddContactViewController"
+    let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,27 +27,21 @@ class ContactsListViewController: UIViewController, AddContactDelegate {
         configData()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-    }
+    
     @IBAction func didTab(_ sender: Any) {
-        if let vcc = storyboard?.instantiateViewController(withIdentifier: RegisterViewcontroller) as? AddContactViewController {
+        if let vcc = storyboard?.instantiateViewController(withIdentifier: AddContactViewController) as? AddContactViewController {
             vcc.delegate = self //self: a
             self.navigationController?.pushViewController(vcc, animated: true)
-                }
+        }
     }
-    
-
-     
     
     func configView() {
         contactTableView.delegate = self
         contactTableView.dataSource = self
         contactTableView.separatorStyle = .none
-       
+        
         floatingButton.backgroundColor = .systemBlue
-        let image = UIImage(systemName:"plus",
+        let image = UIImage(systemName: "plus",
                             withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium))
         floatingButton.setImage(image, for: .normal)
         floatingButton.tintColor = .white
@@ -75,7 +62,13 @@ class ContactsListViewController: UIViewController, AddContactDelegate {
     
 }
 
-extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource {
+extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource, AddContactDelegate {
+    
+    func handleButton(contact: Person) {
+        contacts.append(contact)
+        contactTableView.reloadData()
+    }
+    
     
     //determine number of rows to show in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,29 +77,26 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
     
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let contactImage = contacts[indexPath.row].Image
-        let myCell = contactTableView.dequeueReusableCell(withIdentifier: customCell) as! customCell
         
+        guard indexPath.row < contacts.count, let myCell = contactTableView.dequeueReusableCell(withIdentifier: ContactCell) as? ContactTableViewCell else { return UITableViewCell() }
+        let contactImage = contacts[indexPath.row].Image
         myCell.nameLable.text = contacts[indexPath.row].name
         myCell.titleLable.text = contacts[indexPath.row].title
         myCell.avatarImg.image = contactImage
         myCell.avatarImg.maskCircle()
         myCell.avatarImg.addImageBorder(color: imageBorderColor)
-        
         return myCell
     }
     
-    
-    //to handlen ewsa` the interaction with cell
+    //to handle interaction with cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contactImage = contacts[indexPath.row].Image
-        if let vc = storyboard?.instantiateViewController(withIdentifier: SecondViewcontroller) as? SecondViewController {
-            vc.userName = contacts[indexPath.row].name
-            vc.img = contactImage 
-            vc.userNumber = contacts[indexPath.row].number
+        if let vc = storyboard?.instantiateViewController(withIdentifier: ContactDetailsViewcontroller) as? ContactDetailsViewController {
+            vc.contact = contacts[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    
     
 }
 

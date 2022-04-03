@@ -13,12 +13,4 @@ class UserInfo2TableViewCell: UITableViewCell {
     
     @IBOutlet var UserInfoTextField: UITextField!
     @IBOutlet var UserInfoLable: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 }

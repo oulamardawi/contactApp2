@@ -13,11 +13,11 @@ class Person {
         var Image: UIImage
         var number: String
     
-    init (){
+    init () {
         self.name = "oula"
         self.title = "hi i am there"
         self.number = "0599877554"
-        self.Image = UIImage(named:"jeo") ?? UIImage()
+        self.Image = UIImage(named: "jeo") ?? UIImage()
         }
 
     init (name: String, title: String, number: String, Image: UIImage) {

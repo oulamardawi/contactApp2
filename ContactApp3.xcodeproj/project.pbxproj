@@ -11,7 +11,7 @@
 		DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18642827E33E9B00797D38 /* UIImageView+Border.swift */; };
 		DE18642B27E36EE100797D38 /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */; };
 		DE18642D27E36EF600797D38 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */; };
-		DE3E487327D9E058003F1BD2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E487227D9E058003F1BD2 /* SecondViewController.swift */; };
+		DE3E487327D9E058003F1BD2 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E487227D9E058003F1BD2 /* ContactDetailsViewController.swift */; };
 		DE3ECA0127EC74380085B277 /* trialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3ECA0027EC74380085B277 /* trialTableViewController.swift */; };
 		DE3ECA0427EC745E0085B277 /* trialTVCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3ECA0327EC745E0085B277 /* trialTVCC.swift */; };
 		DE42210A27DF7CA200AAD973 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42210927DF7CA200AAD973 /* Person.swift */; };
@@ -24,7 +24,7 @@
 		DEC21C3527D947D3006BA17D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC21C3327D947D3006BA17D /* Main.storyboard */; };
 		DEC21C3727D947D4006BA17D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC21C3627D947D4006BA17D /* Assets.xcassets */; };
 		DEC21C3A27D947D4006BA17D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC21C3827D947D4006BA17D /* LaunchScreen.storyboard */; };
-		DEC21C4427D950EC006BA17D /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C4327D950EC006BA17D /* customCell.swift */; };
+		DEC21C4427D950EC006BA17D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C4327D950EC006BA17D /* ContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		DE18642827E33E9B00797D38 /* UIImageView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Border.swift"; sourceTree = "<group>"; };
 		DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
-		DE3E487227D9E058003F1BD2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		DE3E487227D9E058003F1BD2 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		DE3ECA0027EC74380085B277 /* trialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trialTableViewController.swift; sourceTree = "<group>"; };
 		DE3ECA0327EC745E0085B277 /* trialTVCC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trialTVCC.swift; sourceTree = "<group>"; };
 		DE42210927DF7CA200AAD973 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		DEC21C3627D947D4006BA17D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC21C3927D947D4006BA17D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC21C3B27D947D4006BA17D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEC21C4327D950EC006BA17D /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		DEC21C4327D950EC006BA17D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		F58C482ED5409BA40A44EF7E /* Pods-ContactApp3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactApp3.release.xcconfig"; path = "Target Support Files/Pods-ContactApp3/Pods-ContactApp3.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +72,72 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE705F5227F99D050053766C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE3E487227D9E058003F1BD2 /* ContactDetailsViewController.swift */,
+				DEC21C3127D947D3006BA17D /* ContactsListViewController.swift */,
+				DE65177B27E9CC88004132C7 /* AddContactViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DE705F5327F99D130053766C /* Cells View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DEC21C4327D950EC006BA17D /* ContactTableViewCell.swift */,
+				DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */,
+				DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */,
+				DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */,
+				DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */,
+			);
+			path = "Cells View Controllers";
+			sourceTree = "<group>";
+		};
+		DE705F5427F99D5C0053766C /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				DE18642827E33E9B00797D38 /* UIImageView+Border.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		DE705F5527F99DB20053766C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEC21C2D27D947D3006BA17D /* AppDelegate.swift */,
+				DEC21C2F27D947D3006BA17D /* SceneDelegate.swift */,
+				DEC21C3327D947D3006BA17D /* Main.storyboard */,
+				DEC21C3827D947D4006BA17D /* LaunchScreen.storyboard */,
+				DEC21C3627D947D4006BA17D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE705F5627F99DE60053766C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE42210927DF7CA200AAD973 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE705F5727F99DEF0053766C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		DE705F5827F99E600053766C /* Ignored */ = {
+			isa = PBXGroup;
+			children = (
+				DE3ECA0027EC74380085B277 /* trialTableViewController.swift */,
+				DE3ECA0327EC745E0085B277 /* trialTVCC.swift */,
+			);
+			path = Ignored;
+			sourceTree = "<group>";
+		};
 		DEC21C2127D947D3006BA17D = {
 			isa = PBXGroup;
 			children = (
@@ -93,24 +159,14 @@
 		DEC21C2C27D947D3006BA17D /* ContactApp3 */ = {
 			isa = PBXGroup;
 			children = (
-				DE3ECA0027EC74380085B277 /* trialTableViewController.swift */,
-				DE3ECA0327EC745E0085B277 /* trialTVCC.swift */,
-				DEC21C2D27D947D3006BA17D /* AppDelegate.swift */,
-				DEC21C2F27D947D3006BA17D /* SceneDelegate.swift */,
-				DEC21C3127D947D3006BA17D /* ContactsListViewController.swift */,
-				DEC21C3327D947D3006BA17D /* Main.storyboard */,
-				DEC21C3627D947D4006BA17D /* Assets.xcassets */,
-				DEC21C3827D947D4006BA17D /* LaunchScreen.storyboard */,
+				DE705F5227F99D050053766C /* View Controllers */,
+				DE705F5327F99D130053766C /* Cells View Controllers */,
+				DE705F5427F99D5C0053766C /* Extentions */,
+				DE705F5727F99DEF0053766C /* View Models */,
+				DE705F5627F99DE60053766C /* Models */,
+				DE705F5527F99DB20053766C /* Resources */,
+				DE705F5827F99E600053766C /* Ignored */,
 				DEC21C3B27D947D4006BA17D /* Info.plist */,
-				DEC21C4327D950EC006BA17D /* customCell.swift */,
-				DE3E487227D9E058003F1BD2 /* SecondViewController.swift */,
-				DE42210927DF7CA200AAD973 /* Person.swift */,
-				DE18642827E33E9B00797D38 /* UIImageView+Border.swift */,
-				DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */,
-				DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */,
-				DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */,
-				DE65177B27E9CC88004132C7 /* AddContactViewController.swift */,
-				DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */,
 			);
 			path = ContactApp3;
 			sourceTree = "<group>";
@@ -244,10 +300,10 @@
 				DEC21C3227D947D3006BA17D /* ContactsListViewController.swift in Sources */,
 				DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */,
 				DE65178027E9DB2E004132C7 /* UserImageTableViewCell.swift in Sources */,
-				DEC21C4427D950EC006BA17D /* customCell.swift in Sources */,
+				DEC21C4427D950EC006BA17D /* ContactTableViewCell.swift in Sources */,
 				DE18642B27E36EE100797D38 /* UserProfileTableViewCell.swift in Sources */,
 				DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */,
-				DE3E487327D9E058003F1BD2 /* SecondViewController.swift in Sources */,
+				DE3E487327D9E058003F1BD2 /* ContactDetailsViewController.swift in Sources */,
 				DE65177E27E9DB15004132C7 /* UserInfo2TableViewCell.swift in Sources */,
 				DEC21C3027D947D3006BA17D /* SceneDelegate.swift in Sources */,
 				DE3ECA0127EC74380085B277 /* trialTableViewController.swift in Sources */,

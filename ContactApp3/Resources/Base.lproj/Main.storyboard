@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="90" id="b11-tn-Xey" customClass="customCell" customModule="ContactApp3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" rowHeight="90" id="b11-tn-Xey" customClass="ContactTableViewCell" customModule="ContactApp3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b11-tn-Xey" id="ERe-mG-2WG">
@@ -73,7 +73,7 @@
                                 <rect key="frame" x="236" y="419" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="JVs-6Y-8cq"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="N7H-f0-bgF"/>
+                                    <constraint firstAttribute="width" constant="60" id="N7H-f0-bgF"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=""/>
@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="1835.625" y="83.75"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Contact Details View Controller-->
         <scene sceneID="hIG-CK-fWB">
             <objects>
-                <viewController storyboardIdentifier="SecondViewcontroller" id="5mx-ea-iC9" customClass="SecondViewController" customModule="ContactApp3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactDetailsViewcontroller" id="5mx-ea-iC9" customClass="ContactDetailsViewController" customModule="ContactApp3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JNf-Ms-RbI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,7 +235,7 @@
         <!--Add Contact View Controller-->
         <scene sceneID="OPh-z5-9TO">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewcontroller" id="atQ-Iu-qNP" customClass="AddContactViewController" customModule="ContactApp3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddContactViewController" id="atQ-Iu-qNP" customClass="AddContactViewController" customModule="ContactApp3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qZI-76-9au">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,6 +329,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapSaveButton" destination="atQ-Iu-qNP" eventType="touchUpInside" id="DXv-9m-oe4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aGL-ec-mHz"/>
@@ -351,6 +354,7 @@
                 <tapGestureRecognizer id="Qzn-vy-5dv">
                     <connections>
                         <action selector="imageClicked:" destination="atQ-Iu-qNP" id="oHf-Uz-PBi"/>
+                        <outlet property="delegate" destination="9Li-pj-L5n" id="9ga-wN-E7c"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

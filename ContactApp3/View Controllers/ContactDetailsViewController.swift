@@ -8,17 +8,15 @@
 import Foundation
 import UIKit
 
-class SecondViewController: UIViewController {
-    
+class ContactDetailsViewController: UIViewController {
     
     @IBOutlet var UserProfileInfoTableView: UITableView!
+    
     let customUserProfileCell = "customUserProfileCell"
     let customUserInfoCell = "customUserInfoCell"
-    
-    var img = UIImage()
-    var userName = ""
-    var userNumber = ""
     let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
+    
+    var contact: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +30,7 @@ class SecondViewController: UIViewController {
     }
 }
 
-extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
+extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     //determine number of rows to show in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,21 +46,20 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            if let userProfileTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserProfileCell) as? UserProfileTableViewCell{
+            if let userProfileTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserProfileCell) as? UserProfileTableViewCell {
                 userProfileTableCell.avatarProfileImage.maskCircle()
                 userProfileTableCell.avatarProfileImage.addImageBorder(color: imageBorderColor)
-                userProfileTableCell.avatarProfileImage.image = img
-                userProfileTableCell.nameProfileLable.text = userName
-                userProfileTableCell.nameProfileLable.text = userName
-
+                userProfileTableCell.avatarProfileImage.image = contact?.Image
+                userProfileTableCell.nameProfileLable.text = contact?.name
+                
                 return userProfileTableCell
             }
         }
         
         else if indexPath.row == 1 {
-            if let userInfoTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfoTableViewCell{
-                userInfoTableCell.nameInfoLable.text = userName
-                userInfoTableCell.numberInfoLable.text = userNumber
+            if let userInfoTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfoTableViewCell {
+                userInfoTableCell.nameInfoLable.text = contact?.name
+                userInfoTableCell.numberInfoLable.text = contact?.number
                 return userInfoTableCell
             }
         }
