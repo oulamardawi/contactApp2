@@ -78,6 +78,16 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         self.navigationController?.popViewController(animated: true)
     }
     
+  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //        if let photo = imageView.image,
+          //      let name = nameTextField.text,
+            //    let position = positionTextField.text,
+              //  let email = emailTextField.text,
+                //let phone = phoneTextField.text {
+                //contact = Contact.init(photo: photo, name: name, position: position, email: email, phone: phone)
+          //  }
+        
+    
     func configView() {
         userInfoImageTableView.delegate = self
         userInfoImageTableView.dataSource = self

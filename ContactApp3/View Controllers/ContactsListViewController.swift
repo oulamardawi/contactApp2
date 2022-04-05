@@ -29,10 +29,12 @@ class ContactsListViewController: UIViewController {
     
     
     @IBAction func didTab(_ sender: Any) {
-        if let vcc = storyboard?.instantiateViewController(withIdentifier: AddContactViewController) as? AddContactViewController {
-            vcc.delegate = self //self: a
-            self.navigationController?.pushViewController(vcc, animated: true)
+        guard let addContactViewController = storyboard?.instantiateViewController(withIdentifier: AddContactViewController) as? AddContactViewController
+        else {
+            return
         }
+       addContactViewController.delegate = self
+        self.performSegue(withIdentifier: "ToAddContactViewController", sender: nil )
     }
     
     func configView() {
@@ -88,15 +90,30 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
         return myCell
     }
     
+    
     //to handle interaction with cell
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: ContactDetailsViewcontroller) as? ContactDetailsViewController {
-            vc.contact = contacts[indexPath.row]
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let contact = contacts[indexPath.row]
+          self.performSegue(withIdentifier: "ToContactDetailsViewController", sender: contact)
+    
     }
     
     
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToContactDetailsViewController"{
+            guard let contactDetailsViewController = segue.destination as? ContactDetailsViewController
+            else {
+                return
+            }
+            contactDetailsViewController.contact = sender as? Person
+        }
+
+    }
     
+
 }
+
+
+
 

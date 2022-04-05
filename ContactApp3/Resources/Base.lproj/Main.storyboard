@@ -98,6 +98,8 @@
                     <connections>
                         <outlet property="contactTableView" destination="cYM-4C-jxT" id="L1M-Y9-3iD"/>
                         <outlet property="floatingButton" destination="DuD-7v-mP8" id="hI4-am-vNS"/>
+                        <segue destination="5mx-ea-iC9" kind="show" identifier="ToContactDetailsViewController" id="fax-Yu-bXW"/>
+                        <segue destination="atQ-Iu-qNP" kind="show" identifier="ToAddContactViewController" id="FFj-Xp-lFH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -113,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k6n-vP-fep">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="customUserProfileCell" rowHeight="195" id="prX-xX-gmS" customClass="UserProfileTableViewCell" customModule="ContactApp3" customModuleProvider="target">
@@ -224,6 +226,7 @@
                             <constraint firstItem="qkW-mU-tzA" firstAttribute="trailing" secondItem="k6n-vP-fep" secondAttribute="trailing" id="iPL-Cr-gVv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HZI-gK-Xef"/>
                     <connections>
                         <outlet property="UserProfileInfoTableView" destination="k6n-vP-fep" id="1XJ-MJ-j7E"/>
                     </connections>
@@ -241,7 +244,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rQQ-kb-jXY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customUserInfo2Cell" rowHeight="50" id="Ka6-Wq-NBN" customClass="UserInfo2TableViewCell" customModule="ContactApp3" customModuleProvider="target">
@@ -345,6 +348,7 @@
                             <constraint firstItem="aGL-ec-mHz" firstAttribute="bottom" secondItem="rQQ-kb-jXY" secondAttribute="bottom" id="xFc-bF-ajB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2bf-Qp-M9U"/>
                     <connections>
                         <outlet property="floatingButton" destination="9Li-pj-L5n" id="BkG-Nf-cyC"/>
                         <outlet property="userInfoImageTableView" destination="rQQ-kb-jXY" id="UiN-wR-WHw"/>
@@ -419,7 +423,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ruX-Ve-xmc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VGm-4j-QAX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
