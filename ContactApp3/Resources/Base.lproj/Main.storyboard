@@ -41,7 +41,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoc-1Q-APA">
-                                                    <rect key="frame" x="110" y="48" width="135" height="21"/>
+                                                    <rect key="frame" x="110" y="48" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -53,8 +53,8 @@
                                                 <constraint firstItem="tqG-KJ-fak" firstAttribute="centerY" secondItem="ERe-mG-2WG" secondAttribute="centerY" id="6W5-51-ZEO"/>
                                                 <constraint firstItem="lLh-qf-z9o" firstAttribute="top" secondItem="ERe-mG-2WG" secondAttribute="top" constant="19" id="8z5-BL-BiG"/>
                                                 <constraint firstItem="tqG-KJ-fak" firstAttribute="leading" secondItem="ERe-mG-2WG" secondAttribute="leading" constant="30" id="NNZ-bu-LFc"/>
-                                                <constraint firstItem="Uoc-1Q-APA" firstAttribute="trailing" secondItem="lLh-qf-z9o" secondAttribute="trailing" id="OWy-xE-7i9"/>
                                                 <constraint firstItem="lLh-qf-z9o" firstAttribute="leading" secondItem="tqG-KJ-fak" secondAttribute="trailing" constant="8" symbolic="YES" id="Qu5-dW-0EY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uoc-1Q-APA" secondAttribute="trailing" constant="10" id="cVN-47-q6t"/>
                                                 <constraint firstAttribute="bottom" secondItem="Uoc-1Q-APA" secondAttribute="bottom" constant="21" id="jFx-R6-iBw"/>
                                                 <constraint firstAttribute="trailing" secondItem="lLh-qf-z9o" secondAttribute="trailing" constant="75" id="xB3-N3-P7x"/>
                                                 <constraint firstItem="Uoc-1Q-APA" firstAttribute="top" secondItem="lLh-qf-z9o" secondAttribute="bottom" constant="8" symbolic="YES" id="zDQ-Mc-9Xp"/>
@@ -295,13 +295,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ski-w2-5Wn">
-                                                    <rect key="frame" x="122" y="9" width="163" height="102"/>
+                                                    <rect key="frame" x="142" y="9" width="163" height="102"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="163" id="LZt-cs-huA"/>
                                                     </constraints>
                                                     <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="Qzn-vy-5dv" appends="YES" id="xtX-tC-1Hk"/>
+                                                        <outletCollection property="gestureRecognizers" destination="5LI-Ug-8jW" appends="YES" id="vgU-B6-ZNL"/>
                                                     </connections>
                                                 </imageView>
                                             </subviews>
@@ -312,7 +312,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="ski-w2-5Wn" secondAttribute="bottom" constant="39" id="Lg6-om-TlO"/>
                                                 <constraint firstItem="E9x-87-Hw1" firstAttribute="leading" secondItem="iaW-ck-uZ9" secondAttribute="leading" constant="29" id="RpQ-7n-hbm"/>
                                                 <constraint firstItem="ski-w2-5Wn" firstAttribute="top" secondItem="iaW-ck-uZ9" secondAttribute="top" constant="10" id="gNJ-Nr-NMS"/>
-                                                <constraint firstAttribute="trailing" secondItem="ski-w2-5Wn" secondAttribute="trailing" constant="35" id="uPU-g3-QmH"/>
+                                                <constraint firstAttribute="trailing" secondItem="ski-w2-5Wn" secondAttribute="trailing" constant="15" id="uPU-g3-QmH"/>
                                                 <constraint firstItem="ski-w2-5Wn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E9x-87-Hw1" secondAttribute="trailing" constant="8" symbolic="YES" id="uaJ-H1-4f1"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -351,10 +351,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMw-kW-FK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Qzn-vy-5dv">
+                <tapGestureRecognizer id="5LI-Ug-8jW">
                     <connections>
-                        <action selector="imageClicked:" destination="atQ-Iu-qNP" id="oHf-Uz-PBi"/>
-                        <outlet property="delegate" destination="9Li-pj-L5n" id="9ga-wN-E7c"/>
+                        <action selector="imageClicked:" destination="atQ-Iu-qNP" id="0us-3A-7sW"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -419,7 +418,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ruX-Ve-xmc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VGm-4j-QAX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

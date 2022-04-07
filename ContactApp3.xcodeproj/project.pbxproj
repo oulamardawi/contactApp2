@@ -11,6 +11,16 @@
 		DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18642827E33E9B00797D38 /* UIImageView+Border.swift */; };
 		DE18642B27E36EE100797D38 /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */; };
 		DE18642D27E36EF600797D38 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */; };
+		DE1CA90B27FC543400ADF90D /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA90A27FC543400ADF90D /* ContactDetailsViewModel.swift */; };
+		DE1CA90D27FC544900ADF90D /* ContactsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA90C27FC544900ADF90D /* ContactsListViewModel.swift */; };
+		DE1CA90F27FC546400ADF90D /* AddContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA90E27FC546400ADF90D /* AddContactViewModel.swift */; };
+		DE1CA91127FC599C00ADF90D /* CellTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91027FC599C00ADF90D /* CellTypeEnum.swift */; };
+		DE1CA91327FC5CAF00ADF90D /* LabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91227FC5CAF00ADF90D /* LabelType.swift */; };
+		DE1CA91527FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91427FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift */; };
+		DE1CA91727FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91627FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift */; };
+		DE1CA91927FC5EF400ADF90D /* UserInfoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91827FC5EF400ADF90D /* UserInfoTableViewCellViewModel.swift */; };
+		DE1CA91B27FC5EFE00ADF90D /* UserInfo2TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91A27FC5EFE00ADF90D /* UserInfo2TableViewCellViewModel.swift */; };
+		DE1CA91D27FC5F9900ADF90D /* UserImageTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91C27FC5F9900ADF90D /* UserImageTableViewCellViewModel.swift */; };
 		DE3E487327D9E058003F1BD2 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E487227D9E058003F1BD2 /* ContactDetailsViewController.swift */; };
 		DE3ECA0127EC74380085B277 /* trialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3ECA0027EC74380085B277 /* trialTableViewController.swift */; };
 		DE3ECA0427EC745E0085B277 /* trialTVCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3ECA0327EC745E0085B277 /* trialTVCC.swift */; };
@@ -33,6 +43,16 @@
 		DE18642827E33E9B00797D38 /* UIImageView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Border.swift"; sourceTree = "<group>"; };
 		DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		DE1CA90A27FC543400ADF90D /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactDetailsViewModel.swift; path = "ContactApp3/View Controllers/ContactDetailsViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		DE1CA90C27FC544900ADF90D /* ContactsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactsListViewModel.swift; path = "ContactApp3/View Controllers/ContactsListViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		DE1CA90E27FC546400ADF90D /* AddContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddContactViewModel.swift; path = "ContactApp3/View Controllers/AddContactViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		DE1CA91027FC599C00ADF90D /* CellTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeEnum.swift; sourceTree = "<group>"; };
+		DE1CA91227FC5CAF00ADF90D /* LabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelType.swift; sourceTree = "<group>"; };
+		DE1CA91427FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactTableViewCellViewModel.swift; path = ContactApp3/Models/ContactTableViewCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DE1CA91627FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserProfileTableViewCellViewModel.swift; path = ContactApp3/Models/UserProfileTableViewCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DE1CA91827FC5EF400ADF90D /* UserInfoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfoTableViewCellViewModel.swift; path = ContactApp3/Models/UserInfoTableViewCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DE1CA91A27FC5EFE00ADF90D /* UserInfo2TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfo2TableViewCellViewModel.swift; path = ContactApp3/Models/UserInfo2TableViewCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DE1CA91C27FC5F9900ADF90D /* UserImageTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserImageTableViewCellViewModel.swift; path = ContactApp3/Models/UserImageTableViewCellViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DE3E487227D9E058003F1BD2 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		DE3ECA0027EC74380085B277 /* trialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trialTableViewController.swift; sourceTree = "<group>"; };
 		DE3ECA0327EC745E0085B277 /* trialTVCC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trialTVCC.swift; sourceTree = "<group>"; };
@@ -118,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				DE42210927DF7CA200AAD973 /* Person.swift */,
+				DE1CA91027FC599C00ADF90D /* CellTypeEnum.swift */,
+				DE1CA91227FC5CAF00ADF90D /* LabelType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -125,8 +147,17 @@
 		DE705F5727F99DEF0053766C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				DE1CA90A27FC543400ADF90D /* ContactDetailsViewModel.swift */,
+				DE1CA90C27FC544900ADF90D /* ContactsListViewModel.swift */,
+				DE1CA90E27FC546400ADF90D /* AddContactViewModel.swift */,
+				DE1CA91427FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift */,
+				DE1CA91627FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift */,
+				DE1CA91827FC5EF400ADF90D /* UserInfoTableViewCellViewModel.swift */,
+				DE1CA91A27FC5EFE00ADF90D /* UserInfo2TableViewCellViewModel.swift */,
+				DE1CA91C27FC5F9900ADF90D /* UserImageTableViewCellViewModel.swift */,
 			);
-			path = "View Models";
+			name = "View Models";
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		DE705F5827F99E600053766C /* Ignored */ = {
@@ -161,9 +192,9 @@
 			children = (
 				DE705F5227F99D050053766C /* View Controllers */,
 				DE705F5327F99D130053766C /* Cells View Controllers */,
-				DE705F5427F99D5C0053766C /* Extentions */,
 				DE705F5727F99DEF0053766C /* View Models */,
 				DE705F5627F99DE60053766C /* Models */,
+				DE705F5427F99D5C0053766C /* Extentions */,
 				DE705F5527F99DB20053766C /* Resources */,
 				DE705F5827F99E600053766C /* Ignored */,
 				DEC21C3B27D947D4006BA17D /* Info.plist */,
@@ -296,19 +327,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE42210A27DF7CA200AAD973 /* Person.swift in Sources */,
+				DE1CA91927FC5EF400ADF90D /* UserInfoTableViewCellViewModel.swift in Sources */,
 				DE65177C27E9CC88004132C7 /* AddContactViewController.swift in Sources */,
 				DEC21C3227D947D3006BA17D /* ContactsListViewController.swift in Sources */,
 				DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */,
 				DE65178027E9DB2E004132C7 /* UserImageTableViewCell.swift in Sources */,
+				DE1CA91527FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift in Sources */,
 				DEC21C4427D950EC006BA17D /* ContactTableViewCell.swift in Sources */,
 				DE18642B27E36EE100797D38 /* UserProfileTableViewCell.swift in Sources */,
 				DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */,
 				DE3E487327D9E058003F1BD2 /* ContactDetailsViewController.swift in Sources */,
 				DE65177E27E9DB15004132C7 /* UserInfo2TableViewCell.swift in Sources */,
+				DE1CA91327FC5CAF00ADF90D /* LabelType.swift in Sources */,
 				DEC21C3027D947D3006BA17D /* SceneDelegate.swift in Sources */,
 				DE3ECA0127EC74380085B277 /* trialTableViewController.swift in Sources */,
+				DE1CA91127FC599C00ADF90D /* CellTypeEnum.swift in Sources */,
+				DE1CA90F27FC546400ADF90D /* AddContactViewModel.swift in Sources */,
+				DE1CA91D27FC5F9900ADF90D /* UserImageTableViewCellViewModel.swift in Sources */,
 				DE3ECA0427EC745E0085B277 /* trialTVCC.swift in Sources */,
+				DE1CA90D27FC544900ADF90D /* ContactsListViewModel.swift in Sources */,
 				DE18642D27E36EF600797D38 /* UserInfoTableViewCell.swift in Sources */,
+				DE1CA91727FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift in Sources */,
+				DE1CA90B27FC543400ADF90D /* ContactDetailsViewModel.swift in Sources */,
+				DE1CA91B27FC5EFE00ADF90D /* UserInfo2TableViewCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
