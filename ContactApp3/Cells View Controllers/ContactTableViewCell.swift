@@ -14,4 +14,6 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet var nameLable: UILabel!
     @IBOutlet var avatarImg: UIImageView!
     @IBOutlet var titleLable: UILabel!
+    
+    //func configure (with viewModel: ContactTableViewCellViewModel)
 }

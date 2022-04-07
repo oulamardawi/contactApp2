@@ -12,26 +12,14 @@ class ContactDetailsViewController: UIViewController {
     
     @IBOutlet var UserProfileInfoTableView: UITableView!
     
+    var viewModel: ContactDetailsViewModel!
+    
     let customUserProfileCell = "customUserProfileCell"
     let customUserInfoCell = "customUserInfoCell"
     let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
     
     var contact: Person?
     
-    public enum CellType: Int, CaseIterable {
-        case Profile = 0
-        case Information = 1
-        
-        var title: String {
-            switch self {
-            case .Profile:
-                return "Name"
-            case .Information:
-                return "Number"
-                
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,15 +54,14 @@ extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSour
             if let userProfileTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserProfileCell) as? UserProfileTableViewCell {
                 userProfileTableCell.avatarProfileImage.maskCircle()
                 userProfileTableCell.avatarProfileImage.addImageBorder(color: imageBorderColor)
-                userProfileTableCell.avatarProfileImage.image = contact?.Image
-                userProfileTableCell.nameProfileLable.text = contact?.name
-                
+                userProfileTableCell.avatarProfileImage.image = viewModel.contactImage
+                userProfileTableCell.nameProfileLable.text = viewModel.contactName
                 return userProfileTableCell
             }
         case .Information:
             if let userInfoTableCell = UserProfileInfoTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfoTableViewCell {
-                userInfoTableCell.nameInfoLable.text = contact?.name
-                userInfoTableCell.numberInfoLable.text = contact?.number
+                userInfoTableCell.nameInfoLable.text = viewModel.contactName
+                userInfoTableCell.numberInfoLable.text = viewModel.contactNumber
                 return userInfoTableCell
             }
             
