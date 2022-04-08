@@ -13,14 +13,17 @@ class ContactsListViewController: UIViewController {
     @IBOutlet var contactTableView: UITableView!
     @IBOutlet var floatingButton: UIButton!
     var viewModel: ContactsListViewModel!
+    var viewModelContactListCell: ContactTableViewCellViewModel!
     let ContactCell = "ContactCell"
     let ContactDetailsViewcontroller = "ContactDetailsViewcontroller"
     let AddContactViewController = "AddContactViewController"
     let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
-    
+    var contact: Person?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = ContactsListViewModel()
+        self.viewModelContactListCell = ContactTableViewCellViewModel()
         floatingButton.addTarget(self, action: #selector(didTab), for: .touchUpInside)
         configView()
     }
@@ -45,7 +48,7 @@ class ContactsListViewController: UIViewController {
         floatingButton.tintColor = .white
         floatingButton.setTitleColor(.white, for: .normal)
         floatingButton.layer.shadowRadius = 20
-        floatingButton.layer.shadowOpacity = 0.4
+        floatingButton.layer.shadowOpacity = 0.3
         floatingButton.layer.cornerRadius = 30
     }
 }
@@ -65,20 +68,17 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
     
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard indexPath.row < viewModel.contacts.count, let myCell = contactTableView.dequeueReusableCell(withIdentifier: ContactCell) as? ContactTableViewCell else { return UITableViewCell() }
-        myCell.nameLable.text = viewModel.contactName(index: indexPath.row)
-        myCell.titleLable.text = viewModel.contactStatus(index: indexPath.row)
-        myCell.avatarImg.image = viewModel.contactImage(index: indexPath.row)
-        myCell.avatarImg.maskCircle()
-        myCell.avatarImg.addImageBorder(color: imageBorderColor)
-        return myCell
+        contact = viewModel.contacts[indexPath.row]
+        myCell.config(contact: contact!)
+           return myCell
     }
     
     //to handle interaction with cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: ContactDetailsViewcontroller) as? ContactDetailsViewController {
-            let contactDetailsViewModel = ContactDetailsViewModel(contact: viewModel.contacts[indexPath.row])
+            let contactDetailsViewModel = ContactDetailsViewModel(contact:viewModel.contacts[indexPath.row])
+        
             vc.viewModel = contactDetailsViewModel
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -87,4 +87,5 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
     
     
 }
+
 

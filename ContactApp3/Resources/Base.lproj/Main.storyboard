@@ -34,7 +34,7 @@
                                                         <constraint firstAttribute="width" constant="72" id="ayW-uJ-Bv1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jjjjjjjjjjjj" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLh-qf-z9o">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLh-qf-z9o">
                                                     <rect key="frame" x="110" y="19" width="135" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -294,8 +294,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ski-w2-5Wn">
-                                                    <rect key="frame" x="142" y="9" width="163" height="102"/>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="ski-w2-5Wn">
+                                                    <rect key="frame" x="142" y="10" width="163" height="101"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="163" id="LZt-cs-huA"/>
@@ -324,10 +324,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Li-pj-L5n">
-                                <rect key="frame" x="121.5" y="426" width="77" height="44"/>
+                                <rect key="frame" x="129.5" y="435.5" width="61" height="34.5"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Save" cornerStyle="medium">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapSaveButton" destination="atQ-Iu-qNP" eventType="touchUpInside" id="DXv-9m-oe4"/>
@@ -433,6 +433,7 @@
     </scenes>
     <resources>
         <image name="bill" width="400" height="400"/>
+        <image name="imagePlaceholder" width="493" height="391"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

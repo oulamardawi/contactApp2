@@ -66,7 +66,7 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         floatingButton.tintColor = .white
         floatingButton.setTitleColor(.white, for: .normal)
         floatingButton.layer.shadowRadius = 10
-        floatingButton.layer.shadowOpacity = 0.4
+        floatingButton.layer.shadowOpacity = 0.15
         floatingButton.layer.cornerRadius = 10
     }
 }
