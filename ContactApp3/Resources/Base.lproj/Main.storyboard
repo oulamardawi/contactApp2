@@ -35,14 +35,17 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLh-qf-z9o">
-                                                    <rect key="frame" x="110" y="19" width="135" height="21"/>
+                                                    <rect key="frame" x="110" y="19" width="160" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="W3w-OG-I8l"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoc-1Q-APA">
-                                                    <rect key="frame" x="110" y="48" width="200" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="110" y="48" width="200" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -52,11 +55,11 @@
                                                 <constraint firstItem="tqG-KJ-fak" firstAttribute="top" secondItem="ERe-mG-2WG" secondAttribute="top" constant="8.5" id="4tR-1N-Jpd"/>
                                                 <constraint firstItem="tqG-KJ-fak" firstAttribute="centerY" secondItem="ERe-mG-2WG" secondAttribute="centerY" id="6W5-51-ZEO"/>
                                                 <constraint firstItem="lLh-qf-z9o" firstAttribute="top" secondItem="ERe-mG-2WG" secondAttribute="top" constant="19" id="8z5-BL-BiG"/>
+                                                <constraint firstAttribute="bottom" secondItem="Uoc-1Q-APA" secondAttribute="bottom" constant="11" id="FpD-8U-jVO"/>
                                                 <constraint firstItem="tqG-KJ-fak" firstAttribute="leading" secondItem="ERe-mG-2WG" secondAttribute="leading" constant="30" id="NNZ-bu-LFc"/>
                                                 <constraint firstItem="lLh-qf-z9o" firstAttribute="leading" secondItem="tqG-KJ-fak" secondAttribute="trailing" constant="8" symbolic="YES" id="Qu5-dW-0EY"/>
                                                 <constraint firstAttribute="trailing" secondItem="Uoc-1Q-APA" secondAttribute="trailing" constant="10" id="cVN-47-q6t"/>
-                                                <constraint firstAttribute="bottom" secondItem="Uoc-1Q-APA" secondAttribute="bottom" constant="21" id="jFx-R6-iBw"/>
-                                                <constraint firstAttribute="trailing" secondItem="lLh-qf-z9o" secondAttribute="trailing" constant="75" id="xB3-N3-P7x"/>
+                                                <constraint firstAttribute="trailing" secondItem="lLh-qf-z9o" secondAttribute="trailing" constant="50" id="xB3-N3-P7x"/>
                                                 <constraint firstItem="Uoc-1Q-APA" firstAttribute="top" secondItem="lLh-qf-z9o" secondAttribute="bottom" constant="8" symbolic="YES" id="zDQ-Mc-9Xp"/>
                                             </constraints>
                                         </tableViewCellContentView>

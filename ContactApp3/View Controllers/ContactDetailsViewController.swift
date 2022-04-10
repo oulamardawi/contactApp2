@@ -38,6 +38,7 @@ extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CellType.allCases.count
     }
+    
     //height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
@@ -46,8 +47,7 @@ extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSour
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let rowType = CellType(rawValue: indexPath.row)
-        var contact: Person?
-        contact = viewModel.contacts[indexPath.row]
+         contact = viewModel.contact
 
         switch rowType {
             

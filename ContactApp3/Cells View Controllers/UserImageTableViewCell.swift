@@ -13,5 +13,5 @@ class UserImageTableViewCell: UITableViewCell {
     
     @IBOutlet var UserImageView: UIImageView!
     @IBOutlet var imageLable: UILabel!
-    
+
 }

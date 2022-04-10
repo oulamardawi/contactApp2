@@ -78,7 +78,6 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: ContactDetailsViewcontroller) as? ContactDetailsViewController {
             let contactDetailsViewModel = ContactDetailsViewModel(contact:viewModel.contacts[indexPath.row])
-        
             vc.viewModel = contactDetailsViewModel
             self.navigationController?.pushViewController(vc, animated: true)
         }
