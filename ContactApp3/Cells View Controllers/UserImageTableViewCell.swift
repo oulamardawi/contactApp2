@@ -11,7 +11,7 @@ import UIKit
 
 class UserImageTableViewCell: UITableViewCell {
     
-    @IBOutlet var UserImageView: UIImageView!
+    @IBOutlet var userImageView: UIImageView!
     @IBOutlet var imageLable: UILabel!
 
 }

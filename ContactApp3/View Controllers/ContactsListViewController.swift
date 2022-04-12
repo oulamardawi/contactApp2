@@ -12,25 +12,25 @@ class ContactsListViewController: UIViewController {
     
     @IBOutlet var contactTableView: UITableView!
     @IBOutlet var floatingButton: UIButton!
+    @IBOutlet var EmptyView: UIView!
     var viewModel: ContactsListViewModel!
-    var viewModelContactListCell: ContactTableViewCellViewModel!
-    let ContactCell = "ContactCell"
-    let ContactDetailsViewcontroller = "ContactDetailsViewcontroller"
-    let AddContactViewController = "AddContactViewController"
+    let contactCell = "ContactCell"
+    let contactDetailsViewController = "ContactDetailsViewcontroller"
+    let addContactViewController = "AddContactViewcontroller"
     let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
     var contact: Person?
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = ContactsListViewModel()
-        self.viewModelContactListCell = ContactTableViewCellViewModel()
         floatingButton.addTarget(self, action: #selector(didTab), for: .touchUpInside)
         configView()
     }
     
     
     @IBAction func didTab(_ sender: Any) {
-        if let vcc = storyboard?.instantiateViewController(withIdentifier: AddContactViewController) as? AddContactViewController {
+        if let vcc = storyboard?.instantiateViewController(withIdentifier: addContactViewController) as? AddContactViewController {
             vcc.delegate = self //self: a
             self.navigationController?.pushViewController(vcc, animated: true)
         }
@@ -50,14 +50,27 @@ class ContactsListViewController: UIViewController {
         floatingButton.layer.shadowRadius = 20
         floatingButton.layer.shadowOpacity = 0.3
         floatingButton.layer.cornerRadius = 30
+        if viewModel.contacts.count == 0 {
+            contactTableView.backgroundView = EmptyView
+        }
     }
 }
 
 extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource, AddContactDelegate {
     
-    func handleButton(contact: Person) {
+    func handleButton(person: Person) {
+        let contact = Person(name: person.name, title: person.title, number: person.number, Image: person.Image)
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: contact, requiringSecureCoding: false)
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(encodedData, forKey: UserDefaultsKeys.Person.rawValue)
         viewModel.contacts.append(contact)
         contactTableView.reloadData()
+        if viewModel.contacts.count == 0 {
+            contactTableView.backgroundView = EmptyView
+        }
+        else {
+            contactTableView.backgroundView = nil
+        }
     }
     
     
@@ -68,23 +81,19 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
     
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard indexPath.row < viewModel.contacts.count, let myCell = contactTableView.dequeueReusableCell(withIdentifier: ContactCell) as? ContactTableViewCell else { return UITableViewCell() }
-        contact = viewModel.contacts[indexPath.row]
+        guard indexPath.row < viewModel.contacts.count, let myCell = contactTableView.dequeueReusableCell(withIdentifier: contactCell) as? ContactTableViewCell else { return UITableViewCell() }
+        contact = viewModel.contacts.User
         myCell.config(contact: contact!)
-           return myCell
+        return myCell
     }
     
     //to handle interaction with cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: ContactDetailsViewcontroller) as? ContactDetailsViewController {
-            let contactDetailsViewModel = ContactDetailsViewModel(contact:viewModel.contacts[indexPath.row])
+        if let vc = storyboard?.instantiateViewController(withIdentifier: contactDetailsViewController) as? ContactDetailsViewController {
+            let contactDetailsViewModel = ContactDetailsViewModel(contact: viewModel.contacts[indexPath.row])
             vc.viewModel = contactDetailsViewModel
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
-    
-    
 }
-
 

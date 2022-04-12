@@ -16,6 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="q6d-Or-WGJ">
+                                <rect key="frame" x="0.0" y="52" width="320" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Contact Availabe. Press '+' to add New Contact." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBY-Jr-KbG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="375"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DBY-Jr-KbG" secondAttribute="bottom" id="KBD-8H-Wfq"/>
+                                    <constraint firstAttribute="trailing" secondItem="DBY-Jr-KbG" secondAttribute="trailing" id="b0H-Nw-cqU"/>
+                                    <constraint firstItem="DBY-Jr-KbG" firstAttribute="top" secondItem="q6d-Or-WGJ" secondAttribute="top" id="bll-nN-zJj"/>
+                                    <constraint firstItem="DBY-Jr-KbG" firstAttribute="leading" secondItem="q6d-Or-WGJ" secondAttribute="leading" id="iVN-Rs-25I"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cYM-4C-jxT">
                                 <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -99,6 +118,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="TWG-rj-8L6"/>
                     <connections>
+                        <outlet property="EmptyView" destination="q6d-Or-WGJ" id="rAU-iS-CW9"/>
                         <outlet property="contactTableView" destination="cYM-4C-jxT" id="L1M-Y9-3iD"/>
                         <outlet property="floatingButton" destination="DuD-7v-mP8" id="hI4-am-vNS"/>
                     </connections>
@@ -238,7 +258,7 @@
         <!--Add Contact View Controller-->
         <scene sceneID="OPh-z5-9TO">
             <objects>
-                <viewController storyboardIdentifier="AddContactViewController" id="atQ-Iu-qNP" customClass="AddContactViewController" customModule="ContactApp3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddContactViewcontroller" id="atQ-Iu-qNP" customClass="AddContactViewController" customModule="ContactApp3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qZI-76-9au">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,7 +267,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customUserInfo2Cell" rowHeight="50" id="Ka6-Wq-NBN" customClass="UserInfo2TableViewCell" customModule="ContactApp3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customUserInfoCell" rowHeight="50" id="Ka6-Wq-NBN" customClass="UserPersonalInfoTableViewCell" customModule="ContactApp3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ka6-Wq-NBN" id="ihD-oS-T81">
@@ -280,8 +300,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="UserInfoLable" destination="KdM-ZO-bem" id="JX5-eQ-PFx"/>
-                                            <outlet property="UserInfoTextField" destination="wLu-5z-WCp" id="qFQ-XA-vr3"/>
+                                            <outlet property="userInfoLable" destination="KdM-ZO-bem" id="JX5-eQ-PFx"/>
+                                            <outlet property="userInfoTextField" destination="wLu-5z-WCp" id="qFQ-XA-vr3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customUserImageCell" id="df6-6i-pFk" customClass="UserImageTableViewCell" customModule="ContactApp3" customModuleProvider="target">
@@ -320,8 +340,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="UserImageView" destination="ski-w2-5Wn" id="VfU-oK-gJT"/>
                                             <outlet property="imageLable" destination="E9x-87-Hw1" id="oBA-l1-HHB"/>
+                                            <outlet property="userImageView" destination="ski-w2-5Wn" id="VfU-oK-gJT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -421,7 +441,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ruX-Ve-xmc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VGm-4j-QAX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

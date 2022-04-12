@@ -14,7 +14,7 @@
 		DE1CA90B27FC543400ADF90D /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA90A27FC543400ADF90D /* ContactDetailsViewModel.swift */; };
 		DE1CA90D27FC544900ADF90D /* ContactsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA90C27FC544900ADF90D /* ContactsListViewModel.swift */; };
 		DE1CA90F27FC546400ADF90D /* AddContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA90E27FC546400ADF90D /* AddContactViewModel.swift */; };
-		DE1CA91127FC599C00ADF90D /* CellTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91027FC599C00ADF90D /* CellTypeEnum.swift */; };
+		DE1CA91127FC599C00ADF90D /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91027FC599C00ADF90D /* CellType.swift */; };
 		DE1CA91327FC5CAF00ADF90D /* LabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91227FC5CAF00ADF90D /* LabelType.swift */; };
 		DE1CA91527FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91427FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift */; };
 		DE1CA91727FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA91627FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift */; };
@@ -26,7 +26,7 @@
 		DE3ECA0427EC745E0085B277 /* trialTVCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3ECA0327EC745E0085B277 /* trialTVCC.swift */; };
 		DE42210A27DF7CA200AAD973 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42210927DF7CA200AAD973 /* Person.swift */; };
 		DE65177C27E9CC88004132C7 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177B27E9CC88004132C7 /* AddContactViewController.swift */; };
-		DE65177E27E9DB15004132C7 /* UserInfo2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */; };
+		DE65177E27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177D27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift */; };
 		DE65178027E9DB2E004132C7 /* UserImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */; };
 		DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C2D27D947D3006BA17D /* AppDelegate.swift */; };
 		DEC21C3027D947D3006BA17D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C2F27D947D3006BA17D /* SceneDelegate.swift */; };
@@ -46,7 +46,7 @@
 		DE1CA90A27FC543400ADF90D /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactDetailsViewModel.swift; path = "ContactApp3/View Controllers/ContactDetailsViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		DE1CA90C27FC544900ADF90D /* ContactsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactsListViewModel.swift; path = "ContactApp3/View Controllers/ContactsListViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		DE1CA90E27FC546400ADF90D /* AddContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddContactViewModel.swift; path = "ContactApp3/View Controllers/AddContactViewModel.swift"; sourceTree = SOURCE_ROOT; };
-		DE1CA91027FC599C00ADF90D /* CellTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeEnum.swift; sourceTree = "<group>"; };
+		DE1CA91027FC599C00ADF90D /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
 		DE1CA91227FC5CAF00ADF90D /* LabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelType.swift; sourceTree = "<group>"; };
 		DE1CA91427FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactTableViewCellViewModel.swift; path = ContactApp3/Models/ContactTableViewCellViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DE1CA91627FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserProfileTableViewCellViewModel.swift; path = ContactApp3/Models/UserProfileTableViewCellViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -58,7 +58,7 @@
 		DE3ECA0327EC745E0085B277 /* trialTVCC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trialTVCC.swift; sourceTree = "<group>"; };
 		DE42210927DF7CA200AAD973 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DE65177B27E9CC88004132C7 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
-		DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo2TableViewCell.swift; sourceTree = "<group>"; };
+		DE65177D27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPersonalInfoTableViewCell.swift; sourceTree = "<group>"; };
 		DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageTableViewCell.swift; sourceTree = "<group>"; };
 		DEC21C2A27D947D3006BA17D /* ContactApp3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC21C2D27D947D3006BA17D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				DEC21C4327D950EC006BA17D /* ContactTableViewCell.swift */,
 				DE18642A27E36EE100797D38 /* UserProfileTableViewCell.swift */,
 				DE18642C27E36EF600797D38 /* UserInfoTableViewCell.swift */,
-				DE65177D27E9DB15004132C7 /* UserInfo2TableViewCell.swift */,
+				DE65177D27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift */,
 				DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */,
 			);
 			path = "Cells View Controllers";
@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DE42210927DF7CA200AAD973 /* Person.swift */,
-				DE1CA91027FC599C00ADF90D /* CellTypeEnum.swift */,
+				DE1CA91027FC599C00ADF90D /* CellType.swift */,
 				DE1CA91227FC5CAF00ADF90D /* LabelType.swift */,
 			);
 			path = Models;
@@ -147,8 +147,8 @@
 		DE705F5727F99DEF0053766C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE1CA90A27FC543400ADF90D /* ContactDetailsViewModel.swift */,
 				DE1CA90C27FC544900ADF90D /* ContactsListViewModel.swift */,
+				DE1CA90A27FC543400ADF90D /* ContactDetailsViewModel.swift */,
 				DE1CA90E27FC546400ADF90D /* AddContactViewModel.swift */,
 				DE1CA91427FC5EDE00ADF90D /* ContactTableViewCellViewModel.swift */,
 				DE1CA91627FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift */,
@@ -337,11 +337,11 @@
 				DE18642B27E36EE100797D38 /* UserProfileTableViewCell.swift in Sources */,
 				DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */,
 				DE3E487327D9E058003F1BD2 /* ContactDetailsViewController.swift in Sources */,
-				DE65177E27E9DB15004132C7 /* UserInfo2TableViewCell.swift in Sources */,
+				DE65177E27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift in Sources */,
 				DE1CA91327FC5CAF00ADF90D /* LabelType.swift in Sources */,
 				DEC21C3027D947D3006BA17D /* SceneDelegate.swift in Sources */,
 				DE3ECA0127EC74380085B277 /* trialTableViewController.swift in Sources */,
-				DE1CA91127FC599C00ADF90D /* CellTypeEnum.swift in Sources */,
+				DE1CA91127FC599C00ADF90D /* CellType.swift in Sources */,
 				DE1CA90F27FC546400ADF90D /* AddContactViewModel.swift in Sources */,
 				DE1CA91D27FC5F9900ADF90D /* UserImageTableViewCellViewModel.swift in Sources */,
 				DE3ECA0427EC745E0085B277 /* trialTVCC.swift in Sources */,

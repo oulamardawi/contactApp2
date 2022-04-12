@@ -25,7 +25,6 @@ class ContactDetailsViewModel {
  
     init(contact: Person) {
         self.contact = contact
-
     }
     
 

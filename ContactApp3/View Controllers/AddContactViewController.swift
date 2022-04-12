@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AddContactDelegate: AnyObject {
-    func handleButton(contact: Person)
+    func handleButton(person: Person)
 }
 
 class AddContactViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -18,9 +18,10 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var floatingButton: UIButton!
     @IBOutlet weak var userInfoImageTableView: UITableView!
     
-    let customUserInfoCell = "customUserInfo2Cell"
+    let customUserInfoCell = "customUserInfoCell"
     let customUserImageCell = "customUserImageCell"
     var imagePicker = UIImagePickerController()
+    //let contactDefaults = UserDefaults.standard
     
     
     override func viewDidLoad() {
@@ -38,21 +39,28 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction private func didTapSaveButton() {
         let person = Person()
         let nameIndexPath = IndexPath(row: LabelType.Name.rawValue, section: 0)
-        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: nameIndexPath) as? UserInfo2TableViewCell, let personName = userInfoTableCell.UserInfoTextField.text {
+        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: nameIndexPath) as? UserPersonalInfoTableViewCell, let personName = userInfoTableCell.userInfoTextField.text {
+            //UserDefaults.standard.set(personName, forKey: "name")
             person.name = personName
         }
         let numberIndexPath = IndexPath(row: LabelType.Number.rawValue, section: 0)
-        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: numberIndexPath) as? UserInfo2TableViewCell, let y = userInfoTableCell.UserInfoTextField.text {
-            person.number = y
+        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: numberIndexPath) as? UserPersonalInfoTableViewCell, let personNumber = userInfoTableCell.userInfoTextField.text {
+           // UserDefaults.standard.set(personNumber, forKey: "number")
+            //person.number = UserDefaults.standard.string(forKey: "number")!
+            person.number = personNumber
         }
         let statusIndexPath = IndexPath(row: LabelType.Status.rawValue, section: 0)
-        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: statusIndexPath) as? UserInfo2TableViewCell, let z = userInfoTableCell.UserInfoTextField.text {
-            person.title = z
+        if let userInfoTableCell = userInfoImageTableView.cellForRow(at: statusIndexPath) as? UserPersonalInfoTableViewCell, let personTitle = userInfoTableCell.userInfoTextField.text {
+           // UserDefaults.standard.set(personTitle, forKey: "title")
+            //person.title = UserDefaults.standard.string(forKey: "title")!
+            person.title = personTitle
         }
         
         let imageIndexPath = IndexPath(row: LabelType.Image.rawValue, section: 0)
-        if let userImageTableCell = userInfoImageTableView.cellForRow(at: imageIndexPath) as? UserImageTableViewCell, let img = userImageTableCell.UserImageView.image {
-            person.Image = img
+        if let userImageTableCell = userInfoImageTableView.cellForRow(at: imageIndexPath) as? UserImageTableViewCell, let personImage = userImageTableCell.userImageView.image {
+            //  UserDefaults.standard.set(personImage, forKey: "image")
+            //  person.Image = UserDefaults.standard.object(forKey: "image") as! UIImage
+            person.Image = personImage
         }
         delegate?.handleButton(contact: person)  //unwrapping
         self.navigationController?.popViewController(animated: true)
@@ -86,9 +94,12 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
         switch rowType {
             
         case .Name, .Number, .Status:
-            if let userInfo2TableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserInfo2TableViewCell {
-                userInfo2TableCell.UserInfoLable.text = rowType?.title
-                return userInfo2TableCell
+            if let userInfoTableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserPersonalInfoTableViewCell {
+                userInfoTableCell.userInfoLable.text = rowType?.title
+                //                if rowType?.title == "Number"{
+                //                    userInfoTableCell.textField(<#T##textField: UITextField##UITextField#>, shouldChangeCharactersIn: , replacementString: "oula")
+                //                }
+                return userInfoTableCell
             }
         case .Image:
             if let userImageTableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserImageCell) as? UserImageTableViewCell {
@@ -104,11 +115,8 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let indexPath = IndexPath(row: LabelType.Image.rawValue, section: 0)
         if let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage, let userImageTableCell = userInfoImageTableView.cellForRow(at: indexPath) as? UserImageTableViewCell {
-            userImageTableCell.UserImageView.image = selectedImage
+            userImageTableCell.userImageView.image = selectedImage
         }
         dismiss(animated: true, completion: nil)
     }
-    
 }
-
-

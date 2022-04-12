@@ -15,9 +15,9 @@ class UserInfoTableViewCell: UITableViewCell {
     @IBOutlet var numberInfoLable: UILabel!
     var contact: Person?
     
-    func config(contact: Person) {
-        nameInfoLable.text = contact.name
-        numberInfoLable.text = contact.number
+    func config(contact: Person?) {
+        nameInfoLable.text = contact?.name
+        numberInfoLable.text = contact?.number
     }
 }
 
