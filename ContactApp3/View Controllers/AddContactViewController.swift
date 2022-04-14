@@ -21,7 +21,6 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     let customUserInfoCell = "customUserInfoCell"
     let customUserImageCell = "customUserImageCell"
     var imagePicker = UIImagePickerController()
-    //let contactDefaults = UserDefaults.standard
     
     
     override func viewDidLoad() {
@@ -40,29 +39,22 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         let person = Person()
         let nameIndexPath = IndexPath(row: LabelType.Name.rawValue, section: 0)
         if let userInfoTableCell = userInfoImageTableView.cellForRow(at: nameIndexPath) as? UserPersonalInfoTableViewCell, let personName = userInfoTableCell.userInfoTextField.text {
-            //UserDefaults.standard.set(personName, forKey: "name")
             person.name = personName
         }
         let numberIndexPath = IndexPath(row: LabelType.Number.rawValue, section: 0)
         if let userInfoTableCell = userInfoImageTableView.cellForRow(at: numberIndexPath) as? UserPersonalInfoTableViewCell, let personNumber = userInfoTableCell.userInfoTextField.text {
-           // UserDefaults.standard.set(personNumber, forKey: "number")
-            //person.number = UserDefaults.standard.string(forKey: "number")!
             person.number = personNumber
         }
         let statusIndexPath = IndexPath(row: LabelType.Status.rawValue, section: 0)
         if let userInfoTableCell = userInfoImageTableView.cellForRow(at: statusIndexPath) as? UserPersonalInfoTableViewCell, let personTitle = userInfoTableCell.userInfoTextField.text {
-           // UserDefaults.standard.set(personTitle, forKey: "title")
-            //person.title = UserDefaults.standard.string(forKey: "title")!
             person.title = personTitle
         }
         
         let imageIndexPath = IndexPath(row: LabelType.Image.rawValue, section: 0)
         if let userImageTableCell = userInfoImageTableView.cellForRow(at: imageIndexPath) as? UserImageTableViewCell, let personImage = userImageTableCell.userImageView.image {
-            //  UserDefaults.standard.set(personImage, forKey: "image")
-            //  person.Image = UserDefaults.standard.object(forKey: "image") as! UIImage
             person.Image = personImage
         }
-        delegate?.handleButton(contact: person)  //unwrapping
+        delegate?.handleButton(person: person)  //unwrapping
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -91,24 +83,22 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let rowType = LabelType(rawValue: indexPath.row)
+        
         switch rowType {
             
         case .Name, .Number, .Status:
             if let userInfoTableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserPersonalInfoTableViewCell {
                 userInfoTableCell.userInfoLable.text = rowType?.title
-                //                if rowType?.title == "Number"{
-                //                    userInfoTableCell.textField(<#T##textField: UITextField##UITextField#>, shouldChangeCharactersIn: , replacementString: "oula")
-                //                }
+                userInfoTableCell.rowType = rowType 
                 return userInfoTableCell
             }
         case .Image:
             if let userImageTableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserImageCell) as? UserImageTableViewCell {
                 return userImageTableCell
             }
-        default:
+         default:
             break
         }
-        
         return UITableViewCell()
     }
     

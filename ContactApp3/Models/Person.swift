@@ -15,10 +15,10 @@ class Person: NSObject, NSCoding {
     var number: String
     
     override init () {
-        self.name = "oula"
-        self.title = "hi i am there"
-        self.number = "0599877554"
-        self.Image = UIImage(named: "jeo") ?? UIImage()
+        self.name = "No Data"
+        self.title = "No Data"
+        self.number = "0000000000"
+        self.Image = UIImage(named: "imagePlaceholder") ?? UIImage()
     }
     
     init (name: String, title: String, number: String, Image: UIImage) {
@@ -40,7 +40,7 @@ class Person: NSObject, NSCoding {
         name = coder.decodeObject(forKey: "name") as! String
         title = coder.decodeObject(forKey: "title") as! String
         number = coder.decodeObject(forKey: "number") as! String
-        Image = (coder.decodeObject(forKey: "Image") as! UIImage)
+        Image = coder.decodeObject(forKey: "Image") as? UIImage ?? UIImage()
     }
 }
 

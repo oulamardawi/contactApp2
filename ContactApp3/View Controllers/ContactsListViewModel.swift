@@ -10,16 +10,11 @@ import UIKit
 
 class ContactsListViewModel {
     //MARK: vars
-   var contacts = [Person]()
-   // var contacts: [Person] = UserDefaults.standard.object(forKey: "myKey") as? [Person] ?? []
-   // let contacts = ["horse", "cow", "camel", "sheep", "goat"]
-
-   // UserDefaults.standard.set(contacts, forKey: "myKey")
-
+    var contacts = [Person]()
     
     //MARK: override methods
     init() {
-        configData()
+        contacts = retrieveContactsArray() //to make data permenant in contacts otherwise
     }
     
     
@@ -36,9 +31,26 @@ class ContactsListViewModel {
         return contacts[index].Image
     }
     
-    func configData() {
-        //        contacts = [Person(name: "Joe Belfiore", title: "In a world far away", number: "0599434233", Image: UIImage(named: "joe") ?? UIImage()), Person(name: "Bill Gates", title: "What I'm doing here", number: "0599434566", Image: UIImage(named: "bill") ?? UIImage()), Person(name: "Mark Zuckerberg", title: "Really busy, WhatsApp only", number: "0599878699", Image: UIImage(named: "mark") ?? UIImage()), Person(name: "Masrissa Mayer", title: "In a rush to catch a plane", number: "0599834211", Image: UIImage(named: "marissa") ?? UIImage()), Person(name: "Sundar Pichai", title: "Do androids dream of electronic sheep?", number: "0568743329", Image: UIImage(named: "sudra") ?? UIImage()), Person(name: "Jeff Bezos", title: "Counting zeros, Prime time", number: "0569809923", Image: UIImage(named: "jeff") ?? UIImage())
-        //                ]
+    func addContact(person: Person) {
+        contacts.append(person)
+        do { let contactsData = try NSKeyedArchiver.archivedData(withRootObject: contacts, requiringSecureCoding: false)
+            UserDefaults.standard.set(contactsData, forKey: "contacts")
+        }
+        catch {
+            print(error)
+        }
     }
     
+    func retrieveContactsArray() -> [Person] {
+        guard let contactsArrayData = UserDefaults.standard.object(forKey: "contacts") as? NSData else {
+            print("'contacts' not found in UserDefaults")
+            return []
+        }
+        guard let contactsArray = NSKeyedUnarchiver.unarchiveObject(with: contactsArrayData as Data) as? [Person] else {
+            print("Could not unarchive from placesData")
+            return []
+        }
+        return contactsArray
+    }
 }
+
