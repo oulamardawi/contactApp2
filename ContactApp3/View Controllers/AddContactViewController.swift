@@ -47,12 +47,12 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         }
         let statusIndexPath = IndexPath(row: LabelType.Status.rawValue, section: 0)
         if let userInfoTableCell = userInfoImageTableView.cellForRow(at: statusIndexPath) as? UserPersonalInfoTableViewCell, let personTitle = userInfoTableCell.userInfoTextField.text {
-            person.title = personTitle
+            person.status = personTitle
         }
         
         let imageIndexPath = IndexPath(row: LabelType.Image.rawValue, section: 0)
         if let userImageTableCell = userInfoImageTableView.cellForRow(at: imageIndexPath) as? UserImageTableViewCell, let personImage = userImageTableCell.userImageView.image {
-            person.Image = personImage
+            person.image = personImage
         }
         delegate?.handleButton(person: person)  //unwrapping
         self.navigationController?.popViewController(animated: true)

@@ -17,7 +17,7 @@ class UserProfileTableViewCell: UITableViewCell {
     
     func config(contact: Person?) {
         nameProfileLable.text = contact?.name
-        avatarProfileImage.image = contact?.Image
+        avatarProfileImage.image = contact?.image
         avatarProfileImage.maskCircle()
         avatarProfileImage.addImageBorder(color: imageBorderColor)
     }

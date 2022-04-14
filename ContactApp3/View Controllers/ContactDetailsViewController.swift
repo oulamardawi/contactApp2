@@ -63,7 +63,6 @@ extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSour
         default:
             break
         }
-        
         return UITableViewCell()
     }
 }

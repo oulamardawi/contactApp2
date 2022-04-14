@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/oulamardawi/Desktop/contactApp2/ContactApp3/Models/Person+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/oulamardawi/Desktop/contactApp2/ContactApp3/Models/Person+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:ContactApp3.xcodeproj">
    </FileRef>
    <FileRef

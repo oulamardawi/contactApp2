@@ -24,10 +24,13 @@
 		DE3E487327D9E058003F1BD2 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E487227D9E058003F1BD2 /* ContactDetailsViewController.swift */; };
 		DE3ECA0127EC74380085B277 /* trialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3ECA0027EC74380085B277 /* trialTableViewController.swift */; };
 		DE3ECA0427EC745E0085B277 /* trialTVCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3ECA0327EC745E0085B277 /* trialTVCC.swift */; };
-		DE42210A27DF7CA200AAD973 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42210927DF7CA200AAD973 /* Person.swift */; };
+		DE42210A27DF7CA200AAD973 /* PersonIgnored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42210927DF7CA200AAD973 /* PersonIgnored.swift */; };
 		DE65177C27E9CC88004132C7 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177B27E9CC88004132C7 /* AddContactViewController.swift */; };
 		DE65177E27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177D27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift */; };
 		DE65178027E9DB2E004132C7 /* UserImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */; };
+		DE72ECC528087A6A007DA48A /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE72ECC328087A6A007DA48A /* DataModel.xcdatamodeld */; };
+		DEB7953D28089D030091A59C /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7953C28089D030091A59C /* Person+CoreDataClass.swift */; };
+		DEB7953F28089D070091A59C /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7953E28089D070091A59C /* Person+CoreDataProperties.swift */; };
 		DEC21C2E27D947D3006BA17D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C2D27D947D3006BA17D /* AppDelegate.swift */; };
 		DEC21C3027D947D3006BA17D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C2F27D947D3006BA17D /* SceneDelegate.swift */; };
 		DEC21C3227D947D3006BA17D /* ContactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC21C3127D947D3006BA17D /* ContactsListViewController.swift */; };
@@ -56,10 +59,13 @@
 		DE3E487227D9E058003F1BD2 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		DE3ECA0027EC74380085B277 /* trialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trialTableViewController.swift; sourceTree = "<group>"; };
 		DE3ECA0327EC745E0085B277 /* trialTVCC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trialTVCC.swift; sourceTree = "<group>"; };
-		DE42210927DF7CA200AAD973 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DE42210927DF7CA200AAD973 /* PersonIgnored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonIgnored.swift; sourceTree = "<group>"; };
 		DE65177B27E9CC88004132C7 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		DE65177D27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPersonalInfoTableViewCell.swift; sourceTree = "<group>"; };
 		DE65177F27E9DB2E004132C7 /* UserImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageTableViewCell.swift; sourceTree = "<group>"; };
+		DE72ECC428087A6A007DA48A /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		DEB7953C28089D030091A59C /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataClass.swift"; path = "/Users/oulamardawi/Desktop/contactApp2/ContactApp3/Models/Person+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		DEB7953E28089D070091A59C /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataProperties.swift"; path = "/Users/oulamardawi/Desktop/contactApp2/ContactApp3/Models/Person+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		DEC21C2A27D947D3006BA17D /* ContactApp3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC21C2D27D947D3006BA17D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC21C2F27D947D3006BA17D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,8 +143,11 @@
 		DE705F5627F99DE60053766C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE42210927DF7CA200AAD973 /* Person.swift */,
+				DE72ECC328087A6A007DA48A /* DataModel.xcdatamodeld */,
+				DE42210927DF7CA200AAD973 /* PersonIgnored.swift */,
 				DE1CA91027FC599C00ADF90D /* CellType.swift */,
+				DEB7953E28089D070091A59C /* Person+CoreDataProperties.swift */,
+				DEB7953C28089D030091A59C /* Person+CoreDataClass.swift */,
 				DE1CA91227FC5CAF00ADF90D /* LabelType.swift */,
 			);
 			path = Models;
@@ -326,7 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE42210A27DF7CA200AAD973 /* Person.swift in Sources */,
+				DE42210A27DF7CA200AAD973 /* PersonIgnored.swift in Sources */,
 				DE1CA91927FC5EF400ADF90D /* UserInfoTableViewCellViewModel.swift in Sources */,
 				DE65177C27E9CC88004132C7 /* AddContactViewController.swift in Sources */,
 				DEC21C3227D947D3006BA17D /* ContactsListViewController.swift in Sources */,
@@ -336,6 +345,8 @@
 				DEC21C4427D950EC006BA17D /* ContactTableViewCell.swift in Sources */,
 				DE18642B27E36EE100797D38 /* UserProfileTableViewCell.swift in Sources */,
 				DE18642927E33E9B00797D38 /* UIImageView+Border.swift in Sources */,
+				DEB7953D28089D030091A59C /* Person+CoreDataClass.swift in Sources */,
+				DEB7953F28089D070091A59C /* Person+CoreDataProperties.swift in Sources */,
 				DE3E487327D9E058003F1BD2 /* ContactDetailsViewController.swift in Sources */,
 				DE65177E27E9DB15004132C7 /* UserPersonalInfoTableViewCell.swift in Sources */,
 				DE1CA91327FC5CAF00ADF90D /* LabelType.swift in Sources */,
@@ -347,6 +358,7 @@
 				DE3ECA0427EC745E0085B277 /* trialTVCC.swift in Sources */,
 				DE1CA90D27FC544900ADF90D /* ContactsListViewModel.swift in Sources */,
 				DE18642D27E36EF600797D38 /* UserInfoTableViewCell.swift in Sources */,
+				DE72ECC528087A6A007DA48A /* DataModel.xcdatamodeld in Sources */,
 				DE1CA91727FC5EEC00ADF90D /* UserProfileTableViewCellViewModel.swift in Sources */,
 				DE1CA90B27FC543400ADF90D /* ContactDetailsViewModel.swift in Sources */,
 				DE1CA91B27FC5EFE00ADF90D /* UserInfo2TableViewCellViewModel.swift in Sources */,
@@ -571,6 +583,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE72ECC328087A6A007DA48A /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE72ECC428087A6A007DA48A /* DataModel.xcdatamodel */,
+			);
+			currentVersion = DE72ECC428087A6A007DA48A /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DEC21C2227D947D3006BA17D /* Project object */;
 }

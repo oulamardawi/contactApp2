@@ -18,11 +18,11 @@ class ContactTableViewCellViewModel {
     }
     
     var contactImage: UIImage? {
-        return contact?.Image
+        return contact?.image
     }
     
     var contactStatus: String? {
-        return contact?.title
+        return contact?.status
     }
     
     init() {

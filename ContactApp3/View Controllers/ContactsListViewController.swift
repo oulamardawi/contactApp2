@@ -24,6 +24,7 @@ class ContactsListViewController: UIViewController {
         self.viewModel = ContactsListViewModel()
         floatingButton.addTarget(self, action: #selector(didTab), for: .touchUpInside)
         configView()
+        contactTableView.dataSource = self
     }
     
     @IBAction func didTab(_ sender: Any) {
@@ -56,8 +57,10 @@ class ContactsListViewController: UIViewController {
 extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource, AddContactDelegate {
     
     func handleButton(person: Person) {
-        viewModel.addContact(person: person)
-        contactTableView.reloadData()
+        viewModel.addNewContact(person: person)
+        DispatchQueue.main.async { // عشان اشي مين ثرد للباكجراوند ما فهمت
+            self.contactTableView.reloadData()
+        }
         if viewModel.contacts.count == 0 {
             contactTableView.backgroundView = EmptyView
         }
