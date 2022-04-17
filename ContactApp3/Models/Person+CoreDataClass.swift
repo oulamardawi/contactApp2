@@ -8,9 +8,9 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 @objc(Person)
 public class Person: NSManagedObject {
     
-
 }

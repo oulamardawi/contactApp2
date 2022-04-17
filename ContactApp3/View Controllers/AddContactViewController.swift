@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AddContactDelegate: AnyObject {
-    func handleButton(person: Person)
+    func handleButton(contact: Contact)
 }
 
 class AddContactViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -36,25 +36,27 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction private func didTapSaveButton() {
-        let person = Person()
+        let contact = Contact()
+        
         let nameIndexPath = IndexPath(row: LabelType.Name.rawValue, section: 0)
         if let userInfoTableCell = userInfoImageTableView.cellForRow(at: nameIndexPath) as? UserPersonalInfoTableViewCell, let personName = userInfoTableCell.userInfoTextField.text {
-            person.name = personName
+            contact.name = personName
         }
+        
         let numberIndexPath = IndexPath(row: LabelType.Number.rawValue, section: 0)
         if let userInfoTableCell = userInfoImageTableView.cellForRow(at: numberIndexPath) as? UserPersonalInfoTableViewCell, let personNumber = userInfoTableCell.userInfoTextField.text {
-            person.number = personNumber
+            contact.number = personNumber
         }
         let statusIndexPath = IndexPath(row: LabelType.Status.rawValue, section: 0)
         if let userInfoTableCell = userInfoImageTableView.cellForRow(at: statusIndexPath) as? UserPersonalInfoTableViewCell, let personTitle = userInfoTableCell.userInfoTextField.text {
-            person.status = personTitle
+            contact.status = personTitle
         }
         
         let imageIndexPath = IndexPath(row: LabelType.Image.rawValue, section: 0)
         if let userImageTableCell = userInfoImageTableView.cellForRow(at: imageIndexPath) as? UserImageTableViewCell, let personImage = userImageTableCell.userImageView.image {
-            person.image = personImage
+            contact.image = personImage
         }
-        delegate?.handleButton(person: person)  //unwrapping
+        delegate?.handleButton(contact: contact)  //unwrapping
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -62,15 +64,8 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         userInfoImageTableView.delegate = self
         userInfoImageTableView.dataSource = self
         userInfoImageTableView.separatorStyle = .none
-        floatingButton.backgroundColor = .systemBlue
-        floatingButton.tintColor = .white
-        floatingButton.setTitleColor(.white, for: .normal)
-        floatingButton.layer.shadowRadius = 10
-        floatingButton.layer.shadowOpacity = 0.15
-        floatingButton.layer.cornerRadius = 10
     }
 }
-
 
 extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -89,14 +84,14 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
         case .Name, .Number, .Status:
             if let userInfoTableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserInfoCell) as? UserPersonalInfoTableViewCell {
                 userInfoTableCell.userInfoLable.text = rowType?.title
-                userInfoTableCell.rowType = rowType 
+                userInfoTableCell.rowType = rowType
                 return userInfoTableCell
             }
         case .Image:
             if let userImageTableCell = userInfoImageTableView.dequeueReusableCell(withIdentifier: customUserImageCell) as? UserImageTableViewCell {
                 return userImageTableCell
             }
-         default:
+        default:
             break
         }
         return UITableViewCell()
