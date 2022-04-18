@@ -23,7 +23,6 @@ public enum LabelType: Int, CaseIterable {
             return "Status"
         case .Image:
             return "Image"
-            
         }
     }
 }

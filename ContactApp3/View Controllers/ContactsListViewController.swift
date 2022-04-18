@@ -3,7 +3,6 @@
 //  ContactApp3
 //
 //  Created by Oula mardawi on 09/03/2022.
-//
 
 import UIKit
 
@@ -24,11 +23,12 @@ class ContactsListViewController: UIViewController {
         self.viewModel = ContactsListViewModel()
         floatingButton.addTarget(self, action: #selector(didTab), for: .touchUpInside)
         configView()
+        
     }
     
     @IBAction func didTab(_ sender: Any) {
         if let vcc = storyboard?.instantiateViewController(withIdentifier: addContactViewController) as? AddContactViewController {
-            vcc.delegate = self //self: a
+            vcc.delegate = self //it says that delegate in addContactsVC(vcc) is point to ContactsListVC
             self.navigationController?.pushViewController(vcc, animated: true)
         }
     }
@@ -47,17 +47,20 @@ class ContactsListViewController: UIViewController {
         floatingButton.layer.shadowRadius = 20
         floatingButton.layer.shadowOpacity = 0.3
         floatingButton.layer.cornerRadius = 30
-        if viewModel.contacts.count == 0 {
-            contactTableView.backgroundView = EmptyView
-        }
+        isEmptyView()
     }
 }
 
 extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource, AddContactDelegate {
     
-    func handleButton(person: Person) {
-        viewModel.addContact(person: person)
-        contactTableView.reloadData()
+    func handleButton(contact: Contact) {
+        DataBaseManager.addNewContact(contact: contact)
+        viewModel.refresh()
+        self.contactTableView.reloadData()
+        isEmptyView()
+    }
+    
+    func isEmptyView() {
         if viewModel.contacts.count == 0 {
             contactTableView.backgroundView = EmptyView
         }
@@ -85,6 +88,25 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
             vc.viewModel = contactDetailsViewModel
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //Creat swipe action
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            
+            //which person to remove
+            let personToRemove = self.viewModel.contacts[indexPath.row]
+            DataBaseManager.deleteContact(person: personToRemove)
+            self.viewModel.contacts.remove(at: indexPath.row)
+            self.contactTableView.deleteRows(at: [indexPath], with: .fade)
+            self.contactTableView.reloadData()
+            completion(true)
+        }
+        action.backgroundColor = .red
+        isEmptyView()
+        return UISwipeActionsConfiguration(actions: [action])
+        
     }
 }
 

@@ -16,7 +16,7 @@ class ContactDetailsViewController: UIViewController {
     var customUserProfileCell = "customUserProfileCell"
     let customUserInfoCell = "customUserInfoCell"
     let imageBorderColor = UIColor(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1.0)
-        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +45,8 @@ extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSour
     //deaque and resuse the last cell with id(cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let rowType = CellType(rawValue: indexPath.row)
-         let contact = viewModel.contact
-
+        let contact = viewModel.contact
+        
         switch rowType {
             
         case .Profile:
@@ -63,7 +63,6 @@ extension ContactDetailsViewController: UITableViewDelegate, UITableViewDataSour
         default:
             break
         }
-        
         return UITableViewCell()
     }
 }
