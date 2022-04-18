@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Contact: NSObject{
+class Contact: NSObject {
     
     var name: String
     var status: String

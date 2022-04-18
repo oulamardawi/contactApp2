@@ -52,7 +52,7 @@ class ContactsListViewController: UIViewController {
 }
 
 extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource, AddContactDelegate {
-   
+    
     func handleButton(contact: Contact) {
         DataBaseManager.addNewContact(contact: contact)
         viewModel.refresh()
@@ -93,8 +93,7 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         //Creat swipe action
-        let action: UIContextualAction
-        action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
             
             //which person to remove
             let personToRemove = self.viewModel.contacts[indexPath.row]

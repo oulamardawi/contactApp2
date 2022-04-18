@@ -22,10 +22,10 @@ class ContactDetailsViewModel {
     var contactImage: UIImage? {
         return contact?.image
     }
- 
+    
     init(contact: Person) {
         self.contact = contact
     }
     
-
+    
 }

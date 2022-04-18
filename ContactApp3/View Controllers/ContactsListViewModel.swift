@@ -11,8 +11,8 @@ import UIKit
 class ContactsListViewModel {
     //MARK: vars
     var contacts = [Person]()
-  
-
+    
+    
     //MARK: override methods
     init() {
         contacts = DataBaseManager.fetchContacts()
