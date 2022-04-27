@@ -21,6 +21,7 @@ class ContactsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = ContactsListViewModel()
+        self.viewModel.delegate = self
         floatingButton.addTarget(self, action: #selector(didTab), for: .touchUpInside)
         configView()
         
@@ -51,14 +52,7 @@ class ContactsListViewController: UIViewController {
     }
 }
 
-extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource, AddContactDelegate {
-    
-    func handleButton(contact: Contact) {
-        DataBaseManager.addNewContact(contact: contact)
-        viewModel.refresh()
-        self.contactTableView.reloadData()
-        isEmptyView()
-    }
+extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func isEmptyView() {
         if viewModel.contacts.count == 0 {
@@ -97,7 +91,7 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
             
             //which person to remove
             let personToRemove = self.viewModel.contacts[indexPath.row]
-            DataBaseManager.deleteContact(person: personToRemove)
+            self.viewModel.deleteContact(contact: personToRemove)
             self.viewModel.contacts.remove(at: indexPath.row)
             self.contactTableView.deleteRows(at: [indexPath], with: .fade)
             self.contactTableView.reloadData()
@@ -110,3 +104,18 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
     }
 }
 
+extension ContactsListViewController: ContactListViewModelDelegate, AddContactDelegate {
+
+    func handleSaveButton(contact: Person) {
+        viewModel.saveContact(contact: contact)
+        self.contactTableView.reloadData()
+        isEmptyView()
+    }
+    
+    func refresh() {
+        DispatchQueue.main.async {
+            self.contactTableView.reloadData()
+            self.isEmptyView()
+        }
+    }
+}

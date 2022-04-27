@@ -21,7 +21,7 @@ class ContactTableViewCell: UITableViewCell {
     
     func config(contact: Person?) {
         nameLable.text = contact?.name
-        avatarImg.image = contact?.image
+        avatarImg.image = contact?.image ?? UIImage(named: "imagePlaceholder")
         titleLable.text = contact?.status
         
         avatarImg.maskCircle()

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AddContactDelegate: AnyObject {
-    func handleButton(contact: Contact)
+    func handleSaveButton(contact: Person)
 }
 
 class AddContactViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -36,7 +36,7 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction private func didTapSaveButton() {
-        let contact = Contact()
+        let contact = Person()
         
         let nameIndexPath = IndexPath(row: LabelType.Name.rawValue, section: 0)
         if let userInfoTableCell = userInfoImageTableView.cellForRow(at: nameIndexPath) as? UserPersonalInfoTableViewCell, let personName = userInfoTableCell.userInfoTextField.text {
@@ -56,8 +56,9 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         if let userImageTableCell = userInfoImageTableView.cellForRow(at: imageIndexPath) as? UserImageTableViewCell, let personImage = userImageTableCell.userImageView.image {
             contact.image = personImage
         }
-        delegate?.handleButton(contact: contact)  //unwrapping
+        delegate?.handleSaveButton(contact: contact)  //unwrapping
         self.navigationController?.popViewController(animated: true)
+        
     }
     
     func configView() {
