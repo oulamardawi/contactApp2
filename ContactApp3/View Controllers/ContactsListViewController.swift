@@ -54,8 +54,6 @@ class ContactsListViewController: UIViewController {
 
 extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     func isEmptyView() {
         if viewModel.contacts.count == 0 {
             contactTableView.backgroundView = EmptyView
@@ -93,7 +91,7 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
             
             //which person to remove
             let personToRemove = self.viewModel.contacts[indexPath.row]
-            //  DataBaseManager.deleteContact(person: personToRemove)
+            self.viewModel.deleteContact(contact: personToRemove)
             self.viewModel.contacts.remove(at: indexPath.row)
             self.contactTableView.deleteRows(at: [indexPath], with: .fade)
             self.contactTableView.reloadData()
@@ -107,8 +105,9 @@ extension ContactsListViewController: UITableViewDelegate, UITableViewDataSource
 }
 
 extension ContactsListViewController: ContactListViewModelDelegate, AddContactDelegate {
-    
-    func handleButton(contact: Person) {
+
+    func handleSaveButton(contact: Person) {
+        viewModel.saveContact(contact: contact)
         self.contactTableView.reloadData()
         isEmptyView()
     }
