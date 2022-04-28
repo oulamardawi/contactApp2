@@ -18,7 +18,7 @@ class ContactsListViewModel {
     //MARK: vars
     var contacts = [Person]()
     var groups: [CNGroup]?
-
+    
     weak var delegate: ContactListViewModelDelegate? //to bind ContactListViewModel to ContactListViewController
     
     //MARK: override methods
@@ -65,13 +65,13 @@ class ContactsListViewModel {
         // Create a mutable object to store data in contactsStore(not thread-safe class), CNContacts is a(thread-safe class) but provide a get only property
         let contacts = CNMutableContact()
         if let contactName = contact.name {
-              contacts.givenName = contactName
-           }
+            contacts.givenName = contactName
+        }
         
         // Store the phone number in phoneNumbers dictionary with label(main phone)
         if let contactNumber = contact.number {
-        contacts.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberMain, value: CNPhoneNumber(stringValue: contactNumber))]
-            }
+            contacts.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberMain, value: CNPhoneNumber(stringValue: contactNumber))]
+        }
         
         // Store the profile picture as data
         if let contactImage = contact.image {
@@ -101,22 +101,16 @@ class ContactsListViewModel {
                 if contact.name == toDeleteContact.givenName + " " + toDeleteContact.familyName {
                     // Save
                     let saveRequest = CNSaveRequest()
-                    saveRequest.delete(toDeleteContact.mutableCopy() as! CNMutableContact)
-                    try? store.execute(saveRequest)
+                    if let deletedContact = toDeleteContact.mutableCopy() as? CNMutableContact {
+                        saveRequest.delete(deletedContact)
+                      try? store.execute(saveRequest)
+                    }
                 }
             })
         }
         catch {
             print("Error")
-            
         }
-        
-        
-    
-        
-        
-        
     }
-    
 }
 
